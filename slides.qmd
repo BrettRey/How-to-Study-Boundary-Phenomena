@@ -1,0 +1,348 @@
+---
+title: "How to Study Boundary Phenomena"
+subtitle: "English Reciprocals and the Limits of Categorization"
+author: "Brett Reynolds"
+institute: "Humber Polytechnic & University of Toronto"
+date: "10 April 2026"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    width: 1600
+    height: 900
+    margin: 0.05
+    center: false
+    hash: true
+    navigationMode: linear
+    controls: false
+    progress: true
+    slideNumber: true
+    embed-resources: true
+    fig-align: center
+    slide-level: 2
+---
+
+## What makes a category real?
+
+::: {.incremental}
+
+- [Traditional answer:]{.term} necessary and sufficient conditions
+- [Problem:]{.term} linguistic categories resist definition. Pronouns share properties, but no single property is shared by all and only pronouns.
+- [Homeostatic Property Cluster (HPC) answer:]{.term} a [robust cluster]{.term} of co-occurring properties + [stabilizing mechanisms]{.term} that maintain the cluster = a category that's [projectible]{.term}. *Homeostatic* = self-correcting, like body temperature.
+
+:::
+
+. . .
+
+[Categories are real because they're [projectible]{.term} (you can make predictions about new instances). They're [projectible]{.term} because they're maintained.]{.thesis}
+
+::: {.notes}
+~2 min. Open with the problem that motivates the whole talk. Traditional categories need necessary and sufficient conditions, but grammatical categories don't have those. HPC theory comes from philosophy of biology (Boyd 1991, 1999) -- it's how biologists think about species. Miller (2021) brought it to linguistics. The name: *homeostatic* means self-correcting, like body temperature -- the system has mechanisms that push it back when it drifts. *Property cluster* = the category is defined by a cluster of co-occurring properties, not by necessary and sufficient conditions. If the audience looks blank at *homeostatic*, the body-temperature analogy lands well. The spinning top slide will reinforce this. Key term to land: *projectible* -- you can make predictions about new instances.
+:::
+
+
+## No real kind without a purpose
+
+:::: {.columns}
+
+::: {.column width="48%"}
+[[Syntactician's proper noun]{.term}]{style="color: #8A6A28;"}
+
+- Distribution: *Brett left* / \**The Brett left*
+- Agreement: 3rd person singular
+- Modification: restricted
+- [Typically has [proper name]{.term} semantics]{style="color: #9B6B9E; font-style: italic;"}
+:::
+
+::: {.column width="48%"}
+[[Semanticist's proper name]{.term}]{style="color: #9B6B9E;"}
+
+- Rigid designation
+- Referential opacity
+- Sense vs. reference
+- [Usually instantiated by a [proper noun]{.term}]{style="color: #8A6A28; font-style: italic;"}
+:::
+
+::::
+
+[*Brett* is both. Different projections, different mechanisms, different HPCs, same extension.]{.thesis}
+
+::: {.notes}
+~1.5 min. Concrete example of why the HPC framework matters. The proper noun / proper name distinction is familiar to this audience but the projection point is the key: knowing that *Brett* is a proper name (semantic fact) doesn't help you predict its syntactic distribution. The two categories are maintained by different mechanisms and project differently. The cross-coloured items show that the clusters overlap (proper nouns typically have proper name semantics, proper names are typically realized by proper nouns) but the overlap is contingent, not definitional. *The Hague* is a proper name but not a bare proper noun.
+:::
+
+
+## Homeostasis: the virtuous circle
+
+What holds these clusters together?
+
+:::: {.circle-diagram}
+
+::: {.circle-node}
+Property cluster<br>
+<span style="font-size: 0.8em; font-style: italic;">co-occurring properties</span>
+:::
+
+::: {.circle-arrows}
+stabilizes &rarr;
+
+&larr; sustains
+:::
+
+::: {.circle-node}
+Mechanisms<br>
+<span style="font-size: 0.8em; font-style: italic;">causal processes</span>
+:::
+
+::::
+
+::: {.mechanism-list}
+[Five grammatical mechanisms:]{.term} morphological realization rules &middot; agreement/case systems &middot; entrenched distributional patterns &middot; grammaticalization pathways &middot; community norms
+:::
+
+<br>
+
+Mechanisms maintain clusters, and clusters sustain the mechanisms that maintain them. That's what [homeostatic]{.term} means.
+
+::: {.notes}
+~1.5 min. The core theoretical machinery. Bridge from slide 3: we saw that different mechanisms produce different kinds. Now: what's the relationship between mechanisms and properties? Properties cluster because mechanisms maintain them. But the cluster itself sustains the mechanisms (speakers learn and reinforce the patterns because the cluster exists). This reciprocal reinforcement is what makes HPC categories real and stable. That's the "homeostatic" in HPC -- self-correcting, like body temperature. The five mechanisms listed are from the paper's footnote 2, adapted from Miller (2021). We'll come back to this diagram at the end when we see which mechanisms are pulling reciprocals in which direction.
+:::
+
+
+## Stability is dynamic, not static
+
+![](plots/top-vs-ball.png){fig-align="center" height="450"}
+
+Grammatical categories are spinning tops, not balls in valleys.
+
+::: {.notes}
+~1.5 min. Now that we've seen what homeostasis is (the virtuous circle), show what kind of stability it produces. Ball in valley = passive equilibrium, the kind you get from definitions. Spinning top = dynamic stability, the kind you get from mechanisms actively maintaining the category. Push a spinning top slightly and gyroscopic forces bring it back. Stop the spin and the top falls. Stop the mechanisms and the category dissolves. This is why "what maintains the category" matters more than "what defines it."
+:::
+
+
+## Our question
+
+Our question is [syntactic]{.term}: what [lexical category]{.term} do *each other* and *one another* belong to? Morphological, semantic, and phonological properties are evidence, but the category itself is a [syntactic]{.term} one.
+
+::: {.notes}
+~30 sec. Brief pivot slide. Connects to the proper noun / proper name slide: we're asking a syntactic question, so morphological and semantic facts are evidence, not the answer itself. Pullum's keynote is about category/function confusions, so this audience will appreciate the precision. This sets up the reciprocals puzzle on the next slide.
+:::
+
+
+## The reciprocals puzzle
+
+*Each other* and *one another*: [pronoun]{.term} or [compound determinative]{.term}?
+
+[Determinative]{.term}: the word class of *the*, *some*, *every* — not the [determiner]{.term} function. [Compound determinatives]{.term} like *somebody* and *everyone* serve as fused [determiner]{.term}–[head]{.term}: one word fills both NP functions (*somebody left* — no separate head noun).
+
+| | Pronoun-like | Determinative-like |
+|---|---|---|
+| Morphology (66) | | Compound; not monomorphemic; no distinct accusative, genitive, or reflexive forms |
+| Semantics (36) | Pro-form (stands in for a full NP); definite; anaphoric; requires an antecedent | |
+| Syntax (50) | Not fused [det]{.term}–[head]{.term}; not in existentials; doesn't take *else* | Accepts genitive *'s*; appears in object |
+| Phonology (3) | | (weak signal) |
+
+155 properties. Morphology pulls one way, semantics the other, syntax is mixed. Which way do they go?
+
+::: {.notes}
+~2 min. Introduce the empirical puzzle. Quick terminology: determinative is a word class (category), determiner is a function — the distinction Pullum is keynoting on. Compound determinatives like *somebody*, *everyone*, *nothing* have compound morphology and serve as fused determiner–head in NP: one word does both jobs. Reciprocals have the same compound structure (*each* + *other*), which looks determinative-like. But semantically they're pro-forms, definite, anaphoric — they require an antecedent that structurally outranks them, like pronouns. Morphologically they lack the distinct accusative, genitive, and reflexive forms that pronouns like *he/him/his/himself* have — more like compound determinatives. Syntactically it's mixed: they don't function as fused determiner–head (pronoun-like), and they don't appear in existentials or take *else* (pronoun-like), but they accept genitive *'s* and appear in object position (like *somebody*). The numbers in parentheses show how many features per block — these are just highlights from 155 total. Agreement is 3rd person either way, so it's not diagnostic. This is the kind of problem where cherry-picking is easy and tempting.
+:::
+
+
+## The problem with cherry-picking
+
+Two items, many tests, easy to pick ones that support your preferred analysis.
+
+. . .
+
+Croft (2001) calls this [methodological opportunism]{.term}: consciously or not, we select tests that support our preferred analysis. Peirce would recognize this as a form of the [method of tenacity]{.term} (fixing belief by what we're inclined to believe).
+
+. . .
+
+Instead: measure the [stability of diagnostic ambiguity]{.term}.
+
+. . .
+
+The interesting question isn't "which category?" but "how stable is the apparent boundary position under different measurement choices?"
+
+::: {.notes}
+~1 min. Brief slide. Croft's "methodological opportunism" and Peirce's "method of tenacity" (from "The Fixation of Belief," 1877) are the same pathology: settling on an answer because it's congenial rather than because inquiry compels it. Peirce's alternative is the method of science: let reality resist your expectations. Here, that means measuring stability instead of picking convenient diagnostics.
+:::
+
+
+## What HPC predicts for boundary items
+
+::: {.incremental}
+
+- [Stable position]{.term}: the result doesn't depend on how you measure
+- [Cross-dimensional tension]{.term}: morphology and semantics pull in different directions
+- [Clean anchors]{.term}: clear cases come out right, so the method is trustworthy
+- [Near-parity mixture]{.term}: the item sits right at the midpoint between the two categories
+- [Robustness to null]{.term}: scramble the data keeping its basic structure; the pattern shouldn't appear by chance — and it doesn't
+
+:::
+
+. . .
+
+These aren't arbitrary desiderata. They're consequences of the theory.
+
+::: {.notes}
+~1.5 min. Incremental reveal. Each expectation follows from HPC theory: if categories are maintained by distinct mechanisms sustaining overlapping bundles, then boundary items should show exactly these properties. E2 is the distinctive HPC prediction: cross-dimensional tension (different feature families pulling different directions) is what you get when distinct mechanisms sustain partly conflicting bundles. Make sure this point lands.
+:::
+
+
+## Mapping grammatical space
+
+155 binary properties (morphology, syntax, semantics, phonology) across 138 items
+
+![Multiple Correspondence Analysis projection. Pronouns (cyan) and determinatives (red) form regions; compound determinatives sit at the interface; reciprocals (triangles) fall in that interface zone.](plots/mca_reciprocals.png){fig-align="center" height="500"}
+
+::: {.notes}
+~1.5 min. The star figure. Like mapping vowel space: 155 features are the acoustic dimensions, pronouns and determinatives are the reference categories. MCA is just for intuition (like an F1–F2 plot). All actual measurement uses full 155-dimensional Jaccard distances. Point out the compound determinatives at the interface and the reciprocals right there with them. Don't dwell on MCA technicalities.
+:::
+
+
+## Not a statistical fluke
+
+Scramble the data 5,000 times, preserving how many properties each word has and how many words have each property.
+
+Observed pattern in only 0.6% of scrambles (*p* = 0.006).
+
+![Permutation null distribution. Dashed line marks the observed value.](plots/permutation_null.png){fig-align="center" height="420"}
+
+::: {.notes}
+~1 min. Quick slide. The quasiswap preserves how many features each word has and how many words have each feature, so we're asking whether the specific combination of features in reciprocals drives their position. 0.6% says yes: not a fluke of marginal structure. But note: this is for the prespecified comparison set. Sensitivity to comparator choice is addressed next.
+:::
+
+
+## Stable across analytic choices
+
+Vary every reasonable analytic choice (distance metric, which properties, weighting) and show all results.
+
+![Each point = one way of running the analysis (four metrics &times; two regularizations). Positive = closer to determinatives; negative = closer to pronouns. Exception: removing morphology flips the sign.](plots/spec_curve.png){fig-align="center" height="420"}
+
+Sign stable across most choices. Removing morphology flips it. That's [cross-dimensional tension]{.term}.
+
+::: {.notes}
+~1.5 min. The specification curve is the garden-of-forking-paths analysis. Vary distance metric (Jaccard, Dice, IDF-weighted), feature set (ablate each block), and regularization. Most specs land on the same side of zero. But removing morphology flips the sign: without morphological features, reciprocals look more pronoun-like. This is exactly the cross-dimensional tension HPC predicts (E2): morphology pulls toward determinative, semantics pulls toward pronoun.
+:::
+
+
+## Right at the midpoint
+
+Best-fitting mixture weight: *each other* = 0.534, *one another* = 0.487
+
+![Every item sorted from determinative (0) to pronoun (1). Reciprocals sit at the midpoint.](plots/eta_strip.pdf){fig-align="center" height="450"}
+
+::: {.notes}
+~1 min. The mixture calibration asks: if reciprocals are a blend of the two anchor profiles, what blend best predicts their observed properties? Answer: almost exactly 50/50. The classifier assigns near-chance probabilities (0.485, 0.467). Predictive log-likelihood is identical under either labelling. The model genuinely can't tell.
+:::
+
+
+## All five expectations confirmed {.smaller}
+
+| | Expectation | Result |
+|:---:|---|---|
+| &#10004; | [Stable position]{.term} | Result stable no matter how you measure |
+| &#10004; | [Cross-dimensional tension]{.term} | Morphology &rarr; determinative; semantics &rarr; pronoun |
+| &#10004; | [Clean anchors]{.term} | Same methods correctly identify clear cases |
+| &#10004; | [Near-parity mixture]{.term} | Best-fitting weights 0.534, 0.487 (near midpoint) |
+| &#10004; | [Robustness to null]{.term} | Pattern in only 0.6% of scrambled data |
+
+<br>
+
+This isn't measurement failure. It's what a real boundary looks like.
+
+::: {.notes}
+~1 min. Summary slide. All five HPC-derived expectations are met. Emphasize that these aren't post hoc rationalizations: they were derived from the theory before the analysis. The punchline: stable ambiguity is data, not noise.
+:::
+
+
+## The boundary is sharp but epistemically inaccessible
+
+Reciprocals *are* one or the other. But our instruments can't resolve which.
+
+. . .
+
+Like a microscope at its diffraction limit: two points either overlap or they don't, but below the threshold our optics can't tell.
+
+. . .
+
+The HPC signature: distinct mechanisms maintaining partially overlapping bundles, with boundary items caught where the bundles diverge.
+
+. . .
+
+The boundary is real (Peirce's [scholastic realism]{.term}). Our inability to locate it is a fact about inquiry, not about reality.
+
+::: {.notes}
+~1.5 min. Philosophical slide. The boundary is ontologically sharp but epistemically inaccessible. This is NOT fuzzy categories. If categories were merely fuzzy, we'd expect uniform gradience across dimensions rather than systematic opposed pulls. If boundaries were sharp but arbitrarily located, we'd expect greater sensitivity to metric choice than the specification curve reveals. The observed pattern -- stable boundary position combined with systematic cross-dimensional conflict -- is the characteristic HPC signature. Peirce's scholastic realism: generals (categories, laws) are real, not just convenient fictions. Fallibilism: our knowledge of them is always provisional. Together these give us exactly the position we need -- the boundary is real, but our instruments have a resolution floor.
+:::
+
+
+## Back to the spinning top
+
+:::: {.circle-diagram}
+
+::: {.circle-node}
+Property cluster<br>
+<span style="font-size: 0.8em; font-style: italic;">co-occurring properties</span>
+:::
+
+::: {.circle-arrows}
+stabilizes &rarr;
+
+&larr; sustains
+:::
+
+::: {.circle-node}
+Mechanisms<br>
+<span style="font-size: 0.8em; font-style: italic;">causal processes</span>
+:::
+
+::::
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+[Determinative basin]{.term} (morphology)
+
+Morphological realization rules maintain compound structure: *each* + *other*
+:::
+
+::: {.column width="50%"}
+[Pronoun basin]{.term} (semantics)
+
+Interpretive mechanisms (reference tracking, anaphoric dependencies) maintain pronoun-like behaviour
+:::
+
+::::
+
+<br>
+
+Two spinning tops overlapping at the boundary. Stop either mechanism and the tension dissolves.
+
+::: {.notes}
+~1.5 min. Bring it full circle. The virtuous circle from Slide 5 now has content: the determinative basin is maintained by morphological realization rules (compound structure), the pronoun basin by interpretive mechanisms (reference tracking, binding). Reciprocals sit where these two sets of mechanisms overlap and conflict. That's why the cross-dimensional tension exists and why it's stable.
+:::
+
+
+## How to study boundary phenomena
+
+1. Build comprehensive profiles (don't cherry-pick diagnostics)
+2. Test against scrambled baselines (especially with small *n*)
+3. Vary specifications systematically (show all results)
+4. Calibrate against clear cases (verify known structure)
+5. Ask whether the ambiguity is [stable]{.term}
+
+<br>
+
+[Stable ambiguity]{.term} is data about the structure of categories, because it tells us what we can and can't project.
+
+<br>
+
+Paper: [LingBuzz 009294](https://ling.auf.net/lingbuzz/009294) &middot; Code: GitHub &middot; brett.reynolds@humber.ca
+
+::: {.notes}
+This slide stays up during Q&A. The practical checklist from the paper's conclusion. Emphasize that this transfers: any small-n categorization problem (modal auxiliaries, discourse particles, anything) can use the same toolkit. The insight is simple: stop forcing binary decisions, measure stability instead.
+:::

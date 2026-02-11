@@ -1,0 +1,15 @@
+Canonical fused-determinatives:
+  - anybody
+  - anyone
+  - everybody
+  - everyone
+  - no_one
+  - nobody
+
+Canonical pronouns:
+  - he
+  - her_acc
+  - her_dep
+  - hers
+  - herself
+  - him

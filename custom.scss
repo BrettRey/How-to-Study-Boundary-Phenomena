@@ -1,0 +1,274 @@
+/*-- scss:defaults --*/
+
+// Import EB Garamond from Google Fonts (embeds in self-contained HTML)
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+// Fonts
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif: "EB Garamond", Garamond, Georgia, serif;
+
+// House-style colour palette
+$primary:    #2E5077;  // deep blue - main data
+$secondary:  #E85D4C;  // coral red - contrast/highlight
+$tertiary:   #4DA375;  // sage green - third series
+$quaternary: #9B6B9E;  // muted purple
+$quinary:    #D4A03E;  // goldenrod
+$light:      #E8E8E8;  // light gray - backgrounds, grids
+$dark:       #2D2D2D;  // near black - text, axes
+$accent:     #6AADE4;  // sky blue
+
+// Revealjs font variables
+$body-font-family: $font-family-serif;
+$heading-font-family: $font-family-serif;
+$presentation-font-size-root: 36px;
+$presentation-line-height-root: 1.4;
+$presentation-heading-font: $font-family-serif;
+$presentation-heading-color: #ffffff;
+$presentation-h1-font-size: 1.6em;
+$presentation-h2-font-size: 1.3em;
+
+// Colours
+$body-bg: #ffffff;
+$body-color: $dark;
+$link-color: #800020;  // dark maroon per house style
+
+/*-- scss:rules --*/
+
+// Global body font
+.reveal {
+  font-family: $font-family-serif;
+  color: $dark;
+}
+
+// Metropolis-style dark title bar
+.reveal .slide-background-content {
+  background-color: $body-bg;
+}
+
+.reveal h2 {
+  font-family: $font-family-serif;
+  background-color: $primary;
+  color: #ffffff;
+  padding: 0.3em 0.6em;
+  margin: -40px -40px 0.6em -40px;
+  font-weight: 400;
+  font-size: $presentation-h2-font-size;
+  font-variant: small-caps;
+  text-transform: none;
+  letter-spacing: 0.03em;
+}
+
+// Body text in serif
+.reveal p,
+.reveal li,
+.reveal td,
+.reveal blockquote,
+.reveal .slide-content {
+  font-family: $font-family-serif;
+  font-size: 0.85em;
+}
+
+// Links
+.reveal a {
+  color: #800020;
+}
+
+// Block quotes
+.reveal blockquote {
+  border-left: 4px solid $primary;
+  padding: 0.4em 0.8em;
+  margin: 0.5em 0;
+  background: lighten($primary, 48%);
+  font-style: italic;
+  width: 90%;
+}
+
+.reveal blockquote p {
+  font-size: 1em;
+}
+
+// Title slide
+.reveal .quarto-title-block {
+  text-align: left;
+}
+
+#title-slide h1.title {
+  font-family: $font-family-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: $dark;
+  line-height: 1.2;
+}
+
+#title-slide .subtitle {
+  font-family: $font-family-serif;
+  font-size: 0.7em;
+  color: $primary;
+  margin-top: 0.3em;
+}
+
+#title-slide .quarto-title-authors,
+#title-slide .quarto-title-author-name {
+  font-family: $font-family-serif;
+  font-size: 0.65em;
+  color: $dark;
+}
+
+#title-slide .date {
+  font-family: $font-family-serif;
+  font-size: 0.55em;
+  color: $dark;
+}
+
+// Tables
+.reveal table {
+  font-family: $font-family-serif;
+  font-size: 0.85em;
+  border-collapse: collapse;
+}
+
+.reveal table th {
+  font-weight: 500;
+  border-bottom: 2px solid $dark;
+  padding: 0.3em 0.6em;
+}
+
+.reveal table td {
+  padding: 0.25em 0.6em;
+  border-bottom: 1px solid lighten($primary, 40%);
+}
+
+// Lists
+.reveal ul, .reveal ol {
+  font-family: $font-family-serif;
+}
+
+.reveal li {
+  margin-bottom: 0.3em;
+}
+
+// Thesis highlight
+.thesis {
+  background: lighten($primary, 52%);
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+  display: block;
+  margin: 0.4em 0;
+}
+
+// Linguistic markup
+.term {
+  font-variant: small-caps;
+}
+
+.mention {
+  font-style: italic;
+}
+
+// Checkmark table
+.summary-table td:first-child {
+  font-weight: 500;
+  text-align: center;
+  color: $tertiary;
+  font-size: 1.1em;
+}
+
+// Diagram containers
+.diagram-panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2em;
+  margin: 1em 0;
+}
+
+.diagram-box {
+  flex: 1;
+  text-align: center;
+  padding: 1em;
+}
+
+.diagram-label {
+  font-family: $font-family-serif;
+  font-size: 0.75em;
+  color: $dark;
+  margin-top: 0.5em;
+}
+
+// Virtuous circle diagram
+.circle-diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  margin: 1em auto;
+}
+
+.circle-node {
+  background: $primary;
+  color: #fff;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-family: $font-family-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+  text-align: center;
+  min-width: 180px;
+}
+
+.circle-arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3em;
+  font-family: $font-family-serif;
+  font-size: 0.7em;
+  color: $dark;
+}
+
+// Mechanism list
+.mechanism-list {
+  font-size: 0.75em;
+  color: $dark;
+  margin-top: 0.8em;
+  text-align: center;
+  font-family: $font-family-serif;
+}
+
+// Speaker notes
+.reveal .speaker-notes {
+  font-family: $font-family-serif;
+  font-size: 0.9em;
+}
+
+// Image sizing
+.reveal .slide figure img {
+  max-height: 55vh;
+}
+
+// Figure captions
+.reveal figcaption {
+  font-family: $font-family-serif;
+  font-size: 0.7em;
+  color: $dark;
+}
+
+// Slide number
+.reveal .slide-number {
+  font-family: $font-family-serif;
+  font-size: 0.55em;
+  color: $dark;
+  right: 16px;
+  bottom: 12px;
+  z-index: 100;
+}
+
+// Fragment (incremental) styling
+.reveal .fragment.fade-in {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.reveal .fragment.fade-in.visible {
+  opacity: 1;
+}

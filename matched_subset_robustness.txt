@@ -1,0 +1,3 @@
+Canonical two-sided p = 0.006
+Rotations: median p = 0.309; q05 = 0.011; q95 = 0.926; Pr(p<.05) = 0.130; Pr(p<.10) = 0.220
+Canonical p percentile among rotations: 3.0%

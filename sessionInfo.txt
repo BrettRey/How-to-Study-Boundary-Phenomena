@@ -1,0 +1,33 @@
+R version 4.5.1 (2025-06-13)
+Platform: aarch64-apple-darwin20
+Running under: macOS Sequoia 15.6.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+
+Random number generation:
+ RNG:     Mersenne-Twister 
+ Normal:  Inversion 
+ Sample:  Rounding 
+ 
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: America/Toronto
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] bayesplot_1.13.0    glmnet_4.1-10       proxy_0.4-27        Matrix_1.7-3        ggrepel_0.9.6       scales_1.4.0        lubridate_1.9.4     forcats_1.0.0       purrr_1.1.0         tidyverse_2.0.0     tibble_3.3.0        ggplot2_3.5.2      
+[13] vegan_2.7-1         permute_0.9-8       loo_2.8.0           stringr_1.5.1       readr_2.1.5         tidyr_1.3.1         dplyr_1.1.4         posterior_1.6.1     cmdstanr_0.9.0.9000
+
+loaded via a namespace (and not attached):
+ [1] shape_1.4.6.1        gtable_0.3.6         tensorA_0.36.2.1     xfun_0.52            processx_3.8.6       lattice_0.22-7       tzdb_0.5.0           vctrs_0.6.5          tools_4.5.1          ps_1.9.1             generics_0.1.4      
+[12] parallel_4.5.1       cluster_2.1.8.1      pkgconfig_2.0.3      data.table_1.17.8    checkmate_2.3.2      RColorBrewer_1.1-3   distributional_0.5.0 lifecycle_1.0.4      compiler_4.5.1       farver_2.1.2         textshaping_1.0.1   
+[23] codetools_0.2-20     pillar_1.11.0        crayon_1.5.3         MASS_7.3-65          iterators_1.0.14     foreach_1.5.2        abind_1.4-8          nlme_3.1-168         tidyselect_1.2.1     stringi_1.8.7        labeling_0.4.3      
+[34] splines_4.5.1        grid_4.5.1           cli_3.6.5            magrittr_2.0.3       survival_3.8-3       dichromat_2.0-0.1    utf8_1.2.6           withr_3.0.2          backports_1.5.0      bit64_4.6.0-1        timechange_0.3.0    
+[45] matrixStats_1.5.0    bit_4.6.0            ragg_1.4.0           hms_1.1.3            evaluate_1.0.4       knitr_1.50           mgcv_1.9-3           rlang_1.1.6          Rcpp_1.1.0           glue_1.8.0           vroom_1.6.5         
+[56] jsonlite_2.0.0       R6_2.6.1             systemfonts_1.2.3   

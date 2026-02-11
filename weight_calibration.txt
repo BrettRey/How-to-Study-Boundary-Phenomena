@@ -1,0 +1,7 @@
+w-hat by metric (target percentile = 0.50)
+  Delta_mean   : 0.303   [extrapolation (low)]
+  P_each       : 0.534   [interpolation]
+  P_onean      : 0.487   [interpolation]
+
+Consensus w-hat (median of per-metric hats): 0.487
+Consensus w-hat (min SSE across metrics):   0.443
