@@ -256,14 +256,14 @@ The HPC signature: distinct mechanisms maintaining partially overlapping bundles
 
 . . .
 
-This is not gradience. Gradient categories would show uniform fading across dimensions, not systematic opposed pulls.
+Categories are internally gradient but sharply bounded. This isn't gradience; it's a boundary phenomenon: independent mechanisms sustaining opposed pulls.
 
 . . .
 
 The boundary is real (Peirce's [scholastic realism]{.term}). Our inability to locate it is a fact about inquiry, not about reality.
 
 ::: {.notes}
-~1.5 min. Philosophical slide. The boundary is ontologically sharp but epistemically inaccessible. The "not gradience" point is key: if categories were merely fuzzy, we'd expect uniform gradience across dimensions rather than systematic opposed pulls. If boundaries were sharp but arbitrarily located, we'd expect greater sensitivity to metric choice than the specification curve reveals. The observed pattern -- stable boundary position combined with systematic cross-dimensional conflict -- is the characteristic HPC signature. Peirce's scholastic realism: generals (categories, laws) are real, not just convenient fictions. Fallibilism: our knowledge of them is always provisional. Together these give us exactly the position we need -- the boundary is real, but our instruments have a resolution floor. Note for Q&A: the empirical pattern is compatible with multiple frameworks (Slater's Stable Property Clusters, Khalidi's causal-network account). What distinguishes HPC here is the emphasis on cross-dimensional tension as the signature of distinct mechanisms maintaining partially overlapping bundles.
+~1.5 min. Philosophical slide. The boundary is ontologically sharp but epistemically inaccessible. The "not gradience" point is key and draws on Ch. 5 of the book: gradience means smooth variation along a dimension (fuzzy membership). What we see here is dual location -- the item satisfies criteria for multiple categories simultaneously because different mechanisms maintain each basin and those mechanisms operate independently. The cross-dimensional tension (morphology pulls one way, semantics the other) is the empirical signature of overlapping basins, not of fading membership. If categories were merely fuzzy, we'd expect uniform gradience across all dimensions rather than systematic opposed pulls. If boundaries were sharp but arbitrarily located, we'd expect greater sensitivity to metric choice than the specification curve reveals. The observed pattern -- stable boundary position combined with systematic cross-dimensional conflict -- is the characteristic HPC signature. Peirce's scholastic realism: generals (categories, laws) are real, not just convenient fictions. Fallibilism: our knowledge of them is always provisional. Together these give us exactly the position we need -- the boundary is real, but our instruments have a resolution floor. Note for Q&A: the empirical pattern is compatible with multiple frameworks (Slater's Stable Property Clusters, Khalidi's causal-network account). What distinguishes HPC here is the emphasis on cross-dimensional tension as the signature of distinct mechanisms maintaining partially overlapping bundles.
 :::
 
 
