@@ -341,7 +341,7 @@ Two spinning tops overlapping at the boundary. Stop either mechanism and the ten
 
 <br>
 
-Paper: [LingBuzz 009294](https://ling.auf.net/lingbuzz/009294) &middot; Code: GitHub &middot; brett.reynolds@humber.ca
+Paper: [LingBuzz 009294](https://ling.auf.net/lingbuzz/009294) &middot; Code: [GitHub](https://github.com/BrettRey/How-to-Study-Boundary-Phenomena) &middot; brett.reynolds@humber.ca
 
 ::: {.notes}
 This slide stays up during Q&A. The practical checklist from the paper's conclusion. Emphasize that this transfers: any small-n categorization problem (modal auxiliaries, discourse particles, anything) can use the same toolkit. The insight is simple: stop forcing binary decisions, measure stability instead.
