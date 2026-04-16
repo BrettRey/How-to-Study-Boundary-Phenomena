@@ -1,0 +1,139 @@
+lemma,seed_class,revised_class,category_source,personhood_profile,anchor_recommendation,notes
+a,determinative,determinative,matrix_clean_seed,not_core_pro_form,exclude,Outside the core pro-form inventory in the personhood paper.
+a_certain,determinative,determinative,matrix_clean_seed,not_core_pro_form,exclude,Outside the core pro-form inventory in the personhood paper.
+a_few,determinative,determinative,matrix_clean_seed,not_core_pro_form,exclude,Outside the core pro-form inventory in the personhood paper.
+a_great_many,determinative,determinative,matrix_clean_seed,not_core_pro_form,exclude,Outside the core pro-form inventory in the personhood paper.
+a_little,determinative,determinative,matrix_clean_seed,non_personal_general,retain,
+all,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+another,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+any,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+anybody,determinative,determinative,matrix_clean_seed,personal_epicene,retain,
+anyone,determinative,determinative,matrix_clean_seed,personal_epicene,retain,
+anything,determinative,determinative,matrix_clean_seed,non_personal_general,retain,
+anywhere,determinative,determinative,matrix_clean_seed,non_personal_locative,retain,
+both,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+certain,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+each,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+either,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+enough,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+every,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+everybody,determinative,determinative,matrix_clean_seed,personal_epicene,retain,
+everyone,determinative,determinative,matrix_clean_seed,personal_epicene,retain,
+everything,determinative,determinative,matrix_clean_seed,non_personal_general,retain,
+everywhere,determinative,determinative,matrix_clean_seed,non_personal_locative,retain,
+few,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+fewer,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+fewest,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+little,determinative,determinative,matrix_clean_seed,non_personal_general,retain,
+less,determinative,determinative,reynolds2024_more_less_never_adverbs,gender_neutral_or_contextual,retain,Retained as determinative under the unified analysis of less.
+least,determinative,determinative,matrix_clean_seed,gender_neutral_or_contextual,retain,
+many,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+many_a,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+more,determinative,determinative,reynolds2024_more_less_never_adverbs,gender_neutral_or_contextual,retain,Retained as determinative under the unified analysis of more.
+most,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+much,determinative,determinative,matrix_clean_seed,non_personal_general,retain,
+neither,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+last,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+next,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+no,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+none,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+nobody,determinative,determinative,matrix_clean_seed,personal_epicene,retain,
+no_one,determinative,determinative,matrix_clean_seed,personal_epicene,retain,
+nothing,determinative,determinative,matrix_clean_seed,non_personal_general,retain,
+nowhere,determinative,determinative,matrix_clean_seed,non_personal_locative,retain,
+one_det,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+two_det,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+three_det,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+once,determinative,determinative,matrix_clean_seed,non_personal_temporal,retain,
+twice,determinative,determinative,matrix_clean_seed,non_personal_temporal,retain,
+thrice,determinative,determinative,matrix_clean_seed,non_personal_temporal,retain,
+several,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+some,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+somebody,determinative,determinative,matrix_clean_seed,personal_epicene,retain,
+someone,determinative,determinative,matrix_clean_seed,personal_epicene,retain,
+something,determinative,determinative,matrix_clean_seed,non_personal_general,retain,
+somewhere,determinative,determinative,matrix_clean_seed,non_personal_locative,retain,
+somewhat,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+such,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+sufficient,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+that,determinative,determinative,matrix_clean_seed,gender_neutral,retain,Generally gender-neutral with a non-personal default in fused-head use.
+these,determinative,determinative,matrix_clean_seed,gender_neutral,retain,Generally gender-neutral with a non-personal default in fused-head use.
+this,determinative,determinative,matrix_clean_seed,gender_neutral,retain,Generally gender-neutral with a non-personal default in fused-head use.
+those,determinative,determinative,matrix_clean_seed,gender_neutral,retain,Generally gender-neutral with a non-personal default in fused-head use.
+the,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+us_det,determinative,determinative,matrix_clean_seed,personal_epicene,retain,Treated as determinative throughout; retained as a clear anchor.
+we_det,determinative,determinative,matrix_clean_seed,personal_epicene,retain,Treated as determinative throughout; retained as a clear anchor.
+you_det,determinative,determinative,matrix_clean_seed,personal_epicene,retain,Treated as determinative throughout; retained as a clear anchor.
+what_det,determinative,determinative,matrix_clean_seed,non_personal_if_pro_form__neutral_with_overt_head,retain,"Treated as determinative throughout, including exclamative what a N; retained as a clear anchor."
+whatever_det,determinative,determinative,matrix_clean_seed,non_personal_if_pro_form__neutral_with_overt_head,retain,Treated as determinative throughout; retained as a clear anchor.
+which_rel_det,determinative,determinative,matrix_clean_seed,non_personal_if_pro_form__neutral_with_overt_head,retain,Treated as determinative throughout; retained as a clear anchor.
+which_int_det,determinative,determinative,matrix_clean_seed,non_personal_if_pro_form__neutral_with_overt_head,retain,Treated as determinative throughout; retained as a clear anchor.
+whichever_rel_det,determinative,determinative,matrix_clean_seed,non_personal_if_pro_form__neutral_with_overt_head,retain,Treated as determinative throughout; retained as a clear anchor.
+whichever_int_det,determinative,determinative,matrix_clean_seed,non_personal_if_pro_form__neutral_with_overt_head,retain,Treated as determinative throughout; retained as a clear anchor.
+zero_det,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+various_det,determinative,determinative,matrix_clean_seed,gender_neutral,retain,
+each_other,pronoun,pronoun,matrix_clean_seed,gender_neutral,exclude,Reciprocal boundary items; exclude from clear pronoun anchors.
+one_another,pronoun,pronoun,matrix_clean_seed,gender_neutral,exclude,Reciprocal boundary items; exclude from clear pronoun anchors.
+he,pronoun,pronoun,matrix_clean_seed,personal_masculine,retain,
+him,pronoun,pronoun,matrix_clean_seed,personal_masculine,retain,
+himself,pronoun,pronoun,matrix_clean_seed,personal_masculine,retain,
+his,pronoun,pronoun,matrix_clean_seed,personal_masculine,retain,
+she,pronoun,pronoun,matrix_clean_seed,personal_feminine,retain,
+her_acc,pronoun,pronoun,matrix_clean_seed,personal_feminine,retain,
+her_dep,pronoun,pronoun,matrix_clean_seed,personal_feminine,retain,
+hers,pronoun,pronoun,matrix_clean_seed,personal_feminine,retain,
+herself,pronoun,pronoun,matrix_clean_seed,personal_feminine,retain,
+it_plain,pronoun,pronoun,matrix_clean_seed,non_personal_general,retain,
+it_dum,pronoun,pronoun,matrix_clean_seed,dummy_outside_system,exclude,Dummy pronoun outside the personhood system.
+its,pronoun,pronoun,matrix_clean_seed,non_personal_general,retain,
+itself,pronoun,pronoun,matrix_clean_seed,non_personal_general,retain,
+I,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+me,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+mine,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+my,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+myself,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+one_pron,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+one_s,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+oneself,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+their_sing,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+theirs_sing,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+their_plur,pronoun,pronoun,matrix_clean_seed,gender_neutral,retain,
+theirs_plur,pronoun,pronoun,matrix_clean_seed,gender_neutral,retain,
+them_sing,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+them_plur,pronoun,pronoun,matrix_clean_seed,gender_neutral,retain,
+themself,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+themselves,pronoun,pronoun,matrix_clean_seed,gender_neutral,retain,
+they_sing,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+they_plur,pronoun,pronoun,matrix_clean_seed,gender_neutral,retain,
+we_pron,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+us_pron,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+our,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+ours,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+ourselves,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+what_pron,pronoun,determinative,user_instruction_wh_never_pronouns,non_personal_if_pro_form__neutral_with_overt_head,exclude,"Seed row encoded pronoun use, but the lexical item is treated as determinative throughout. Keep this compatibility row out of clear anchors to avoid double counting."
+whatever_pron,pronoun,pronoun,matrix_clean_seed,non_personal_general,review,
+which_rel_pron,pronoun,determinative,user_instruction_which_is_determinative,non_personal_if_pro_form__neutral_with_overt_head,exclude,"Seed row encoded pronoun use, but the lexical item is treated as determinative throughout. Keep this compatibility row out of clear anchors to avoid double counting."
+who_int,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+who_rel,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+whom_int,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+whom_rel,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+whose_int,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+whose_rel,pronoun,pronoun,matrix_clean_seed,gender_neutral,retain,
+whoever,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+whoever_s,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+whosever,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+whosoever,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+whosoever_s,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+you_pron_sing,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+you_pron_plur,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+your_sing,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+yours_sing,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+your_plur,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+yours_plur,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+yourself,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+yourselves,pronoun,pronoun,matrix_clean_seed,personal_epicene,retain,
+today,pronoun,noun,user_instruction_temporal_items_are_nouns,temporal_noun_outside_system,exclude,Temporal noun; exclude from the pronoun/determinative inventory.
+tomorrow,pronoun,noun,user_instruction_temporal_items_are_nouns,temporal_noun_outside_system,exclude,Temporal noun; exclude from the pronoun/determinative inventory.
+tonight,pronoun,noun,user_instruction_temporal_items_are_nouns,temporal_noun_outside_system,exclude,Temporal noun; exclude from the pronoun/determinative inventory.
+yesterday,pronoun,noun,user_instruction_temporal_items_are_nouns,temporal_noun_outside_system,exclude,Temporal noun; exclude from the pronoun/determinative inventory.
+there,pronoun,preposition,user_instruction_there_is_preposition_except_existential_and_tag_pronoun,preposition_outside_system,exclude,Seed row conflates existential/tag pronoun uses with the broader preposition use; exclude from the pronoun/determinative inventory until context-sensitive splitting is added.

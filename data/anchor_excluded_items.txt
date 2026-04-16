@@ -1,0 +1,14 @@
+a
+a_certain
+a_few
+a_great_many
+each_other
+one_another
+it_dum
+what_pron
+which_rel_pron
+today
+tomorrow
+tonight
+yesterday
+there
