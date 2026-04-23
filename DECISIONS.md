@@ -35,3 +35,15 @@ Format: `## YYYY-MM-DD` then bullet points with **bold topic** and brief rationa
 - **Promoted personal and residual wh-determinatives out of review.** `we_det`, `us_det`, `you_det`, `whatever_det`, `whichever_rel_det`, and `whichever_int_det` are now treated as determinatives throughout and retained as clear anchors. This aligns the operational inventory with the intended theoretical analysis instead of letting pronoun-overlap heuristics keep them artificially in review.
 
 - **Removed `there` from the pronoun/determinative comparison.** The current seed row conflates existential/tag pronoun uses with the broader preposition use, so `there` is now excluded from the inventory until a context-sensitive split is added. This prevents the baseline from treating a mixed row as a meaningful boundary item.
+
+## 2026-04-15
+
+- **Follow-on inventory stabilized for handoff.** The override layer now treats temporal deictics as nouns, promotes the remaining personal and wh-determinatives to clear determinative anchors, and excludes conflated `there` from the comparison. This reduces the operational residue to a single review item (`whatever_pron`) before corpus retagging moves to a separate project folder.
+
+- **This repo is frozen as the theory/inventory baseline, not the corpus-engineering workspace.** The pronoun/determinative baseline, derived inventories, and diagnostic plots were committed and pushed as `8fe9ec2` (`Add pronoun-determinative inventory baseline`). Future EWT/GUM retagging work should proceed in the separate retagging project, using this repo as the inventory/decision source.
+
+## 2026-04-23
+
+- **Journal-version workflow additions are prior predictive checking, a canonical model ladder, and SBC.** The manuscript now treats these as the next serious workflow upgrades: show what the anchor and misclassification priors imply before fitting, move through one explicit sequence from simple classifier to fuller generative model, and validate the final Stan implementation with simulation-based calibration rather than relying on fit diagnostics alone.
+
+- **PSIS-LOO is secondary in this project.** If predictive comparison enters the workflow, it should follow posterior predictive checks and report Pareto-`k` diagnostics. The main question here is boundary location, not model ranking, so cross-validation should not drive the rhetoric of the paper.

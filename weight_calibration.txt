@@ -1,7 +1,3 @@
-w-hat by metric (target percentile = 0.50)
-  Delta_mean   : 0.303   [extrapolation (low)]
-  P_each       : 0.534   [interpolation]
-  P_onean      : 0.487   [interpolation]
-
-Consensus w-hat (median of per-metric hats): 0.487
-Consensus w-hat (min SSE across metrics):   0.443
+Predictive blend minima (mean log loss; lower is better):
+  each_other   : w = 0.504, mean log loss = 0.3499
+  one_another  : w = 0.451, mean log loss = 0.3564

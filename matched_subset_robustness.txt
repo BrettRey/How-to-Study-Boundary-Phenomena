@@ -1,3 +1,5 @@
-Canonical two-sided p = 0.006
-Rotations: median p = 0.309; q05 = 0.011; q95 = 0.926; Pr(p<.05) = 0.130; Pr(p<.10) = 0.220
-Canonical p percentile among rotations: 3.0%
+Canonical Δ = 0.079
+Canonical upper-tail summary = 0.003 (MC SE ≈ 0.001)
+Reference model: quasiswap with preserved row/column totals; B = 5000; burn-in = 1500; seed = 2025
+Rotations: median Δ = 0.023; q25 = 0.002; q75 = 0.043; Pr(Δ>0) = 0.750
+Canonical Δ percentile among rotations: 95.0%

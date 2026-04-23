@@ -1,15 +1,27 @@
 # 03_matched_set_robustness.R — rotate matched subsets with shared permutations
 # Canonical subset + K rotations; reuse the same permuted matrices for every subset;
-# report per-subset two-sided p around the perm-mean; save a one-line appendix summary.
+# summarize the observed Delta distribution across rotations and save a one-line appendix summary.
 
 suppressPackageStartupMessages({
-  library(tidyverse); library(Matrix); library(proxy); library(vegan)
+  library(dplyr)
+  library(ggplot2)
+  library(tibble)
+  library(Matrix)
+  library(proxy)
+  library(vegan)
 })
 set.seed(2025)
-dir.create("out", showWarnings=FALSE)
+
+root_dir <- if (file.exists("data/matrix_clean.csv")) "." else if (file.exists("../data/matrix_clean.csv")) ".." else stop("Run from repo root or code/.")
+data_path <- function(...) file.path(root_dir, "data", ...)
+plot_path <- function(...) file.path(root_dir, "plots", ...)
+root_path <- function(...) file.path(root_dir, ...)
+
+dir.create(data_path(), showWarnings = FALSE, recursive = TRUE)
+dir.create(plot_path(), showWarnings = FALSE, recursive = TRUE)
 
 # ---------- Load ----------
-dat <- read.csv("matrix_clean.csv", stringsAsFactors=FALSE, check.names=FALSE)
+dat <- read.csv(data_path("matrix_clean.csv"), stringsAsFactors=FALSE, check.names=FALSE)
 stopifnot(all(c("lemma","class") %in% names(dat)))
 items <- dat$lemma
 y_raw <- factor(dat$class, levels=c("determinative","pronoun"))
@@ -41,6 +53,12 @@ p_two_sided <- function(T_obs, T_null){
   T0 <- mean(T_null)
   p  <- (sum(abs(T_null - T0) >= abs(T_obs - T0)) + 1) / (length(T_null) + 1)
   list(T0 = T0, p = p)
+}
+upper_tail_summary <- function(T_obs, T_null){
+  (sum(T_null >= T_obs) + 1) / (length(T_null) + 1)
+}
+mcse_binomial <- function(p, n){
+  sqrt(p * (1 - p) / n)
 }
 
 # ---------- Subset design ----------
@@ -90,21 +108,24 @@ for (b in seq_len(B)) {
   for (k in seq_len(K)) {
     T_null_rot[b, k] <- mean_delta_for_sets(Mb, recip_u, rot_pron_u[[k]], rot_fused_u[[k]])
   }
-  if (b %% 200 == 0) saveRDS(list(T_null_canon = T_null_canon[1:b],
-                                  T_null_rot = T_null_rot[1:b, , drop = FALSE]),
-                             file = sprintf("out/pp_null_partial_b%05d.rds", b))
   setTxtProgressBar(pb, b)
 }
 close(pb)
 
 canon_p <- p_two_sided(T_obs_canon, T_null_canon)
 rot_p   <- lapply(seq_len(K), function(k) p_two_sided(T_obs_rot[k], T_null_rot[, k]))
+canon_tail <- upper_tail_summary(T_obs_canon, T_null_canon)
+canon_tail_mcse <- mcse_binomial(canon_tail, B + 1)
 
 # ---------- Assemble tidy results ----------
 res_canon <- tibble(
   fused = paste(canon_fused, collapse = ";"),
   pron  = paste(canon_pron,  collapse = ";"),
-  T_obs = T_obs_canon, T0 = canon_p$T0, p_two_sided = canon_p$p
+  T_obs = T_obs_canon,
+  T0 = canon_p$T0,
+  p_two_sided = canon_p$p,
+  tail_area_upper = canon_tail,
+  tail_area_mcse = canon_tail_mcse
 )
 res_rot <- tibble(
   fused = vapply(rot_fused, paste, character(1), collapse = ";"),
@@ -115,55 +136,80 @@ res_rot <- tibble(
 )
 all_res <- bind_rows(mutate(res_canon, subset="canonical"),
                      mutate(res_rot,   subset="rotation"))
-write.csv(all_res, "out/matched_subset_robustness.csv", row.names = FALSE)
+write.csv(all_res, data_path("matched_subset_robustness.csv"), row.names = FALSE)
+write.csv(
+  tibble(draw = seq_len(B), delta = T_null_canon),
+  data_path("quasiswap_reference_delta.csv"),
+  row.names = FALSE
+)
 
 # ---------- Manifest for appendix ----------
-sink("out/matched_subset_manifest.txt")
+sink(root_path("matched_subset_manifest.txt"))
 cat("Canonical fused-determinatives:\n"); cat(paste0("  - ", canon_fused, collapse = "\n")); cat("\n\n")
 cat("Canonical pronouns:\n");           cat(paste0("  - ", canon_pron,  collapse = "\n"));  cat("\n")
 sink()
 
 # ---------- Plots ----------
-p_scatter <- ggplot(all_res, aes(T_obs, p_two_sided, color = subset)) +
-  geom_point(alpha = .7) + geom_hline(yintercept = .05, linetype = 2) +
-  labs(x = "Observed Δ (pron − fused)", y = "Two-sided p (around null mean)", title = "Matched-subset robustness")
-p_hist <- ggplot(filter(all_res, subset == "rotation"), aes(p_two_sided)) +
-  geom_histogram(bins = 30) +
-  geom_vline(xintercept = res_canon$p_two_sided, linetype = 2) +
-  labs(x = "p(two-sided)", title = "Distribution across rotations; dashed = canonical")
+rot_effects <- filter(all_res, subset == "rotation")$T_obs
+effect_lines <- tibble(
+  x = c(quantile(rot_effects, 0.25), median(rot_effects), quantile(rot_effects, 0.75)),
+  kind = c("iqr", "median", "iqr")
+)
 
-png("out/matched_subset_robustness.png", width = 1400, height = 600, res = 150)
-print(p_scatter); print(p_hist); dev.off()
+p_hist <- ggplot(tibble(delta = rot_effects), aes(delta)) +
+  geom_histogram(bins = 30, fill = "grey35", colour = NA) +
+  geom_vline(data = effect_lines,
+             aes(xintercept = x, linetype = kind),
+             linewidth = 0.7, colour = "grey20", show.legend = FALSE) +
+  geom_vline(xintercept = res_canon$T_obs, linetype = 2, linewidth = 0.9) +
+  scale_linetype_manual(values = c("median" = 1, "iqr" = 3)) +
+  labs(
+    x = expression(Delta~"(pronoun" - "compound determinative)"),
+    y = "count",
+    title = "Distribution across rotations; dashed = canonical"
+  ) +
+  theme_minimal(base_size = 12)
+
+ggsave(plot_path("matched_subset_robustness.png"), p_hist, width = 7, height = 4.5, dpi = 300, bg = "white")
 
 # ---------- One-line appendix summary ----------
-rot <- filter(all_res, subset=="rotation")$p_two_sided
+rot <- filter(all_res, subset=="rotation")$T_obs
 
-# Canonical p as a percentile of rotation p's
-canon_percentile <- ecdf(rot)(res_canon$p_two_sided)
-extra <- sprintf("Canonical p percentile among rotations: %.1f%%", 100*canon_percentile)
+# Canonical effect as a percentile of rotation effects
+canon_percentile <- ecdf(rot)(res_canon$T_obs)
+extra <- sprintf("Canonical Δ percentile among rotations: %.1f%%", 100*canon_percentile)
 
 txt <- sprintf(
-  "Canonical two-sided p = %.3f\nRotations: median p = %.3f; q05 = %.3f; q95 = %.3f; Pr(p<.05) = %.3f; Pr(p<.10) = %.3f\n%s",
-  res_canon$p_two_sided,
-  median(rot), quantile(rot,.05), quantile(rot,.95),
-  mean(rot < .05), mean(rot < .10),
+  paste(
+    "Canonical Δ = %.3f",
+    "Canonical upper-tail summary = %.3f (MC SE ≈ %.3f)",
+    "Reference model: quasiswap with preserved row/column totals; B = %d; burn-in = %d; seed = 2025",
+    "Rotations: median Δ = %.3f; q25 = %.3f; q75 = %.3f; Pr(Δ>0) = %.3f",
+    "%s",
+    sep = "\n"
+  ),
+  res_canon$T_obs,
+  canon_tail,
+  canon_tail_mcse,
+  B,
+  burn,
+  median(rot), quantile(rot,.25), quantile(rot,.75),
+  mean(rot > 0),
   extra
 )
 
 writeLines(txt)
-writeLines(txt, "out/matched_subset_robustness.txt")
+writeLines(txt, root_path("matched_subset_robustness.txt"))
 
-# --- Canonical permutation null plot (Δ under quasiswap) ---
-suppressPackageStartupMessages(library(tidyverse))
-
+# --- Canonical reference distribution plot (Δ under quasiswap) ---
 null_df <- tibble(delta = T_null_canon)
 p <- ggplot(null_df, aes(delta)) +
   geom_histogram(bins = 40, linewidth = 0.2) +
   geom_vline(xintercept = mean(T_null_canon), linetype = 3) +   # permutation mean E0[Δ]
   geom_vline(xintercept = T_obs_canon,  linetype = 2) +         # observed Δ
-  labs(title = "Permutation null for Δ (quasiswap, B = 5,000)",
-       x = expression(Delta~"(under null)"),
+  labs(title = "Quasiswap reference distribution for Δ (B = 5,000)",
+       x = "Δ under row-/column-preserving reference model",
        y = "count") +
   theme_minimal(base_size = 12)
 
-ggsave("out/permutation_null.png", p, width = 7, height = 4.5, dpi = 300, bg = "white")
+ggsave(plot_path("permutation_null.png"), p, width = 7, height = 4.5, dpi = 300, bg = "white")

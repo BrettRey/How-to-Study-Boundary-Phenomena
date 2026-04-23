@@ -156,6 +156,10 @@ p_spec <- spec_res |>
   scale_shape_manual(values = c("ridge" = 16, "elastic05" = 17),
                      labels = c("ridge" = "Ridge", "elastic05" = "Elastic net"),
                      name = "Regularization:") +
+  guides(
+    colour = guide_legend(order = 1, nrow = 1, byrow = TRUE),
+    shape = guide_legend(order = 2, nrow = 1, byrow = TRUE)
+  ) +
   house_theme(base_size = 16) +
   labs(
     y = expression(paste(Delta, "distance (pronoun \u2212 determinative)")),
@@ -167,11 +171,14 @@ p_spec <- spec_res |>
     axis.line.x = element_blank(),
     strip.background = element_rect(fill = "grey95", colour = NA),
     strip.text = element_text(family = "EB Garamond", size = 14),
-    legend.position = "none"
+    legend.position = "top",
+    legend.box = "vertical",
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 9)
   )
 
 ggsave("../plots/spec_curve.png", p_spec,
-       width = 8, height = 4.8, dpi = 300, bg = "white")
+       width = 8.6, height = 5.6, dpi = 300, bg = "white")
 message("  Saved plots/spec_curve.png")
 
 
