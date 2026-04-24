@@ -6,9 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Title:** How to Study Boundary Phenomena: English Reciprocals and the Limits of Categorization
 **Author:** Brett Reynolds
-**Status:** Paper ready
+**Status:** Submitted to the Canadian Journal of Linguistics/Revue canadienne de linguistique on 2026-04-24
 **Preprint:** [LingBuzz 009294](https://ling.auf.net/lingbuzz/009294) (Sept 2025)
-**Presenting:** Paris, April 2025
+**Presented:** Paris, April 10, 2026
 
 ## Build
 
@@ -22,7 +22,9 @@ pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
 
 ## Structure
 
-- `main.tex` - paper
+- `main.tex` - working paper source with identified and anonymous branches
+- `main-cjl.tex` - anonymous CJL build wrapper
+- `submission/` - CJL submission materials, including title page, reviewer list, accessibility descriptions, and anonymous source package
 - `refs.bib` - bibliography (unified style)
 - `code/` - R scripts + Stan models
 - `data/` - CSV matrices and outputs

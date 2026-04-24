@@ -245,7 +245,7 @@ p_perm <- ggplot(null_df, aes(delta)) +
   geom_vline(xintercept = T_obs, linetype = 2, colour = secondary, linewidth = 0.8) +
   house_theme(base_size = 16) +
   labs(
-    x = expression(paste(Delta, " (under null)")),
+    x = expression(paste(Delta, " from quasiswap reference distribution")),
     y = "Count"
   )
 

@@ -19,6 +19,9 @@ root_path <- function(...) file.path(root_dir, ...)
 dir.create(data_path(), showWarnings = FALSE, recursive = TRUE)
 dir.create(plot_path(), showWarnings = FALSE, recursive = TRUE)
 
+house_blue <- "#6AADE4"
+house_red <- "#E85D4C"
+
 dat <- read.csv(data_path("matrix_clean.csv"), stringsAsFactors = FALSE, check.names = FALSE)
 stopifnot(all(c("lemma", "class") %in% names(dat)))
 
@@ -102,6 +105,7 @@ curve_plot <- curve_df |>
   ggplot(aes(w, mean_log_loss, colour = label)) +
   geom_line(linewidth = 1) +
   geom_vline(data = best_df, aes(xintercept = w, colour = label), linetype = 2, linewidth = 0.8, show.legend = FALSE) +
+  scale_colour_manual(values = c("each other" = house_blue, "one another" = house_red)) +
   labs(
     title = "Predictive fit across mixture weights",
     x = "Mixture weight w (pronoun share)",

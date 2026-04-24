@@ -233,11 +233,15 @@ writeLines(sprintf("PPC: Pr(anchors overlap > reciprocals) = %.3f", pr_anchor_gt
            "out/ppc_summary.txt")
 
 # ---------- Plots ----------
+house_blue <- "#6AADE4"
+house_red <- "#E85D4C"
+
 png("out/ppc_procrustes_hist.png", width = 900, height = 600, res = 140)
 pp <- ppc_procr[is.finite(ppc_procr)]
 if (length(pp) >= 5) {
-  hist(pp, breaks = 30, main = "PPC: Procrustes correlation (PCoA Jaccard)", xlab = "R")
-  abline(v = median(pp), lty = 2)
+  hist(pp, breaks = 30, main = "PPC: Procrustes correlation (PCoA Jaccard)", xlab = "R",
+       col = adjustcolor(house_blue, alpha.f = 0.8), border = "white")
+  abline(v = median(pp), lty = 2, col = house_red, lwd = 2)
 } else {
   plot.new(); title(main = "PPC: Procrustes correlation (PCoA Jaccard)")
   mtext("No finite values produced; check inputs.", side = 3, line = 0.5)
@@ -246,12 +250,14 @@ dev.off()
 
 png("out/ppc_knn_overlap_hist.png", width = 900, height = 600, res = 140)
 aa <- ppc_knn_anchor[is.finite(ppc_knn_anchor)]
-hist(aa, breaks = 30, main = "PPC: k-NN overlap (anchors)", xlab = "Jaccard")
-abline(v = median(aa), lty = 2)
+hist(aa, breaks = 30, main = "PPC: k-NN overlap (anchors)", xlab = "Jaccard",
+     col = adjustcolor(house_blue, alpha.f = 0.8), border = "white")
+abline(v = median(aa), lty = 2, col = house_red, lwd = 2)
 dev.off()
 
 png("out/ppc_knn_diff_hist.png", width = 900, height = 600, res = 140)
 dd <- (ppc_knn_anchor - ppc_knn_recip)[is.finite(ppc_knn_anchor - ppc_knn_recip)]
-hist(dd, breaks = 30, main = "PPC: anchor minus reciprocal k-NN overlap", xlab = "Jaccard difference")
-abline(v = median(dd), lty = 2)
+hist(dd, breaks = 30, main = "PPC: anchor minus reciprocal k-NN overlap", xlab = "Jaccard difference",
+     col = adjustcolor(house_blue, alpha.f = 0.8), border = "white")
+abline(v = median(dd), lty = 2, col = house_red, lwd = 2)
 dev.off()

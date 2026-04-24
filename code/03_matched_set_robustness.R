@@ -20,6 +20,9 @@ root_path <- function(...) file.path(root_dir, ...)
 dir.create(data_path(), showWarnings = FALSE, recursive = TRUE)
 dir.create(plot_path(), showWarnings = FALSE, recursive = TRUE)
 
+house_blue <- "#6AADE4"
+house_red <- "#E85D4C"
+
 # ---------- Load ----------
 dat <- read.csv(data_path("matrix_clean.csv"), stringsAsFactors=FALSE, check.names=FALSE)
 stopifnot(all(c("lemma","class") %in% names(dat)))
@@ -157,16 +160,16 @@ effect_lines <- tibble(
 )
 
 p_hist <- ggplot(tibble(delta = rot_effects), aes(delta)) +
-  geom_histogram(bins = 30, fill = "grey35", colour = NA) +
+  geom_histogram(bins = 30, fill = house_blue, colour = "white", linewidth = 0.2, alpha = 0.8) +
   geom_vline(data = effect_lines,
              aes(xintercept = x, linetype = kind),
              linewidth = 0.7, colour = "grey20", show.legend = FALSE) +
-  geom_vline(xintercept = res_canon$T_obs, linetype = 2, linewidth = 0.9) +
+  geom_vline(xintercept = res_canon$T_obs, linetype = 2, linewidth = 0.9, colour = house_red) +
   scale_linetype_manual(values = c("median" = 1, "iqr" = 3)) +
   labs(
     x = expression(Delta~"(pronoun" - "compound determinative)"),
     y = "count",
-    title = "Distribution across rotations; dashed = canonical"
+    title = "Distribution across rotations; dashed = prespecified set"
   ) +
   theme_minimal(base_size = 12)
 
@@ -204,9 +207,9 @@ writeLines(txt, root_path("matched_subset_robustness.txt"))
 # --- Canonical reference distribution plot (Δ under quasiswap) ---
 null_df <- tibble(delta = T_null_canon)
 p <- ggplot(null_df, aes(delta)) +
-  geom_histogram(bins = 40, linewidth = 0.2) +
-  geom_vline(xintercept = mean(T_null_canon), linetype = 3) +   # permutation mean E0[Δ]
-  geom_vline(xintercept = T_obs_canon,  linetype = 2) +         # observed Δ
+  geom_histogram(bins = 40, fill = house_blue, colour = "white", linewidth = 0.2, alpha = 0.8) +
+  geom_vline(xintercept = mean(T_null_canon), linetype = 3, colour = "grey50", linewidth = 0.5) +   # permutation mean E0[Δ]
+  geom_vline(xintercept = T_obs_canon,  linetype = 2, colour = house_red, linewidth = 0.8) +         # observed Δ
   labs(title = "Quasiswap reference distribution for Δ (B = 5,000)",
        x = "Δ under row-/column-preserving reference model",
        y = "count") +

@@ -47,3 +47,23 @@ Format: `## YYYY-MM-DD` then bullet points with **bold topic** and brief rationa
 - **Journal-version workflow additions are prior predictive checking, a canonical model ladder, and SBC.** The manuscript now treats these as the next serious workflow upgrades: show what the anchor and misclassification priors imply before fitting, move through one explicit sequence from simple classifier to fuller generative model, and validate the final Stan implementation with simulation-based calibration rather than relying on fit diagnostics alone.
 
 - **PSIS-LOO is secondary in this project.** If predictive comparison enters the workflow, it should follow posterior predictive checks and report Pareto-`k` diagnostics. The main question here is boundary location, not model ranking, so cross-validation should not drive the rhetoric of the paper.
+
+## 2026-04-24
+
+- **House style is binding even against reviewer preference.** The CJL draft keeps contractions, removes banned connective/modals (`however`, `yet`, `must`, `cannot`, `therefore`, etc.), and avoids letting external copyedit suggestions override the explicit house rules. Reason: this project's style guide is an intentional prose system, not a loose preference list.
+
+- **Table 1 uses ragged-right text in its first two columns.** The first two `p{}` columns were switched to `>{\raggedright\arraybackslash}p{...}` with `array` loaded in the preamble. Reason: narrow fully justified cells were producing visibly bad spacing in the diagnostic and illustration columns.
+
+- **Statistics prose is shifting from tool-name-first to question-first exposition.** Reader-facing prose now prefers `row- and column-preserving reference distribution` / `randomizations` and explains what each lens is supposed to show before naming the statistic; `quasiswap` is retained mainly where the algorithm itself must be identified. Reason: CJL readers need the motivation for each method before the terminology.
+
+- **Methods sections now define the distance contrast before benchmarking it.** The manuscript introduces `\Delta` before the constrained reference distribution, explains the row- and column-preserving benchmark before naming `quasiswap`, separates numerical specification sensitivity from comparator-set rotation, and retitles the blend section around predictive calibration. Reason: each statistical lens should answer a clear reader-facing question before its label or implementation detail appears.
+
+- **HPC stays as a compact projectibility frame, not the paper's headline.** The introduction now unpacks the homeostatic-property-cluster claim as a claim about when partial diagnostic profiles support projection, and the discussion qualifies mechanism language as an interpretation consistent with the matrix rather than something directly identified by it. Reason: HPC should explain why stable mixed placement matters without turning the CJL article into a philosophy-of-science paper.
+
+- **CJL is the submission venue for the journal version.** The paper was submitted to the Canadian Journal of Linguistics/Revue canadienne de linguistique on 2026-04-24. Reason: the paper now fits CJL as a methodologically explicit English-grammar article rather than as a broader philosophy-of-linguistics piece.
+
+- **Upload source must be a scrubbed anonymous source package, not raw `main.tex`.** The working `main.tex` keeps identified and anonymous branches, so the upload package is `submission/latex_source_anonymous/` plus `submission/cjl_anonymous_latex_source.zip`. Reason: raw source would expose author metadata and non-anonymous branch content.
+
+- **Submission materials are split by review function.** Identifying material lives in `CJL_TITLE_PAGE.*`, reviewer suggestions in `CJL_REVIEWERS.*`, accessibility descriptions in `CJL_ACCESSIBILITY.md`, and source files in the anonymous source package. Reason: CJL/ScholarOne wants anonymity in the manuscript but separate author/contact/declaration materials.
+
+- **Excluded reviewers are framework conflicts rather than intellectual opponents.** Pullum and Huddleston are listed as opposed/potential conflicts because of coauthorship and their central role in the CGEL framework, while Aarts, Denison, Keizer, Payne, and Wallis are recommended as content/method fits. Reason: this gives the editor usable expertise without violating ordinary conflict expectations.
