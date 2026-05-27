@@ -1,6 +1,8 @@
 # Canadian Journal of Linguistics Submission Notes
 
 **Submitted:** 2026-04-24
+**Manuscript ID:** CJLRCL-2026-0026
+**Author Centre:** https://mc.manuscriptcentral.com/cjl-rcl
 
 ## Files
 

@@ -67,3 +67,7 @@ Format: `## YYYY-MM-DD` then bullet points with **bold topic** and brief rationa
 - **Submission materials are split by review function.** Identifying material lives in `CJL_TITLE_PAGE.*`, reviewer suggestions in `CJL_REVIEWERS.*`, accessibility descriptions in `CJL_ACCESSIBILITY.md`, and source files in the anonymous source package. Reason: CJL/ScholarOne wants anonymity in the manuscript but separate author/contact/declaration materials.
 
 - **Excluded reviewers are framework conflicts rather than intellectual opponents.** Pullum and Huddleston are listed as opposed/potential conflicts because of coauthorship and their central role in the CGEL framework, while Aarts, Denison, Keizer, Payne, and Wallis are recommended as content/method fits. Reason: this gives the editor usable expertise without violating ordinary conflict expectations.
+
+## 2026-05-27
+
+- **Classify dirty state as submission/admin tracking residue.** `submission/CJL_SUBMISSION.md` now records manuscript ID `CJLRCL-2026-0026` and the ScholarOne author-centre URL; `writing-style.md` is a local style-rule symlink now ignored by `.gitignore`. No manuscript source, anonymous source package, PDF, data, or analysis file changed.

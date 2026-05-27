@@ -28,6 +28,7 @@ Thumbs.db
 # Internal project management
 .agent/
 STATUS.md
+writing-style.md
 
 # Conference materials (not part of repo)
 Brochure*.pdf
