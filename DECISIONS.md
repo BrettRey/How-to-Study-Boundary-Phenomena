@@ -71,3 +71,13 @@ Format: `## YYYY-MM-DD` then bullet points with **bold topic** and brief rationa
 ## 2026-05-27
 
 - **Classify dirty state as submission/admin tracking residue.** `submission/CJL_SUBMISSION.md` now records manuscript ID `CJLRCL-2026-0026` and the ScholarOne author-centre URL; `writing-style.md` is a local style-rule symlink now ignored by `.gitignore`. No manuscript source, anonymous source package, PDF, data, or analysis file changed.
+
+## 2026-06-09
+
+- **Treat the CJL/RCL decision as no-reviewer / venue-fit, not substantive rejection.** CJL/RCL rejected `CJLRCL-2026-0026` because the editors could not secure reviewers despite several attempts and suggested a more specialized journal. Reason: there are no reviewer reports to answer, so the next step is venue retargeting rather than manuscript revision driven by feedback.
+
+- **Retarget to the Journal of Quantitative Linguistics.** The JQL pitch should foreground the paper as a quantitative workflow for stable diagnostic ambiguity in small-*n* grammatical boundary phenomena, with English reciprocals as the proof-of-concept case. Reason: this matches JQL's methods-plus-theoretical-understanding scope better than another broad English-grammar venue.
+
+- **JQL refit makes the measurement workflow the headline.** The working manuscript now uses the title `Measuring Stable Diagnostic Ambiguity: A Quantitative Workflow for Small-n Grammatical Boundary Phenomena`, opens with the small-*n* measurement problem, adds an explicit seven-step workflow, and moves HPC to theoretical payoff rather than premise. The CJL branch is preserved under the existing `\CJLSubmission` conditional, with `main-jql.tex` as the new build wrapper. Reason: Brett accepted the measurement-forward title in Roughdraft and asked for a strong JQL fit without sunk-cost thinking.
+
+- **JQL submission is now the active state.** The paper was submitted to the *Journal of Quantitative Linguistics* on 2026-06-09 with submission ID `269804392`. Reason: the Taylor & Francis confirmation establishes the new tracking state; future revisions should start from the JQL package rather than the old CJL package.

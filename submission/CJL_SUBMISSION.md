@@ -3,6 +3,13 @@
 **Submitted:** 2026-04-24
 **Manuscript ID:** CJLRCL-2026-0026
 **Author Centre:** https://mc.manuscriptcentral.com/cjl-rcl
+**Decision:** Rejected 2026-06-09 because the editors were unable to secure reviewers despite several attempts.
+
+## Outcome
+
+CJL/RCL rejected the manuscript without external reviews. Editor Nicole Rosen wrote that the journal had been unable to secure reviewers and suggested that the paper would likely receive better feedback and reach a wider audience at a more specialized journal.
+
+Treat this as a no-reviewer / venue-fit outcome, not as substantive reviewer feedback. There are no reports to answer.
 
 ## Files
 

@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Status
 
-**Title:** How to Study Boundary Phenomena: English Reciprocals and the Limits of Categorization
+**Title:** Measuring Stable Diagnostic Ambiguity: A Quantitative Workflow for Small-n Grammatical Boundary Phenomena
 **Author:** Brett Reynolds
-**Status:** Submitted to the Canadian Journal of Linguistics/Revue canadienne de linguistique on 2026-04-24
+**Status:** Submitted to the Journal of Quantitative Linguistics on 2026-06-09 (submission ID 269804392) after Canadian Journal of Linguistics/Revue canadienne de linguistique no-reviewer rejection on 2026-06-09
 **Preprint:** [LingBuzz 009294](https://ling.auf.net/lingbuzz/009294) (Sept 2025)
 **Presented:** Paris, April 10, 2026
 
@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # Paper
-pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
+pdflatex main-jql.tex && biber main-jql && pdflatex main-jql.tex && pdflatex main-jql.tex
 
 # Analysis (R + Stan)
 # See code/ directory - run scripts in numbered order
@@ -22,9 +22,10 @@ pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
 
 ## Structure
 
-- `main.tex` - working paper source with identified and anonymous branches
+- `main.tex` - working paper source with JQL-facing identified branch and preserved CJL conditional branch
+- `main-jql.tex` - JQL build wrapper
 - `main-cjl.tex` - anonymous CJL build wrapper
-- `submission/` - CJL submission materials, including title page, reviewer list, accessibility descriptions, and anonymous source package
+- `submission/` - CJL provenance materials plus JQL submission package and tracking
 - `refs.bib` - bibliography (unified style)
 - `code/` - R scripts + Stan models
 - `data/` - CSV matrices and outputs
@@ -32,7 +33,7 @@ pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
 
 ## Core Argument
 
-English reciprocals (*each other*, *one another*) are boundary phenomena between pronouns and compound determinatives. Rather than forcing a binary decision, the paper measures **stability of ambiguity** using:
+English reciprocals (*each other*, *one another*) are the proof-of-concept case for a quantitative workflow measuring stable diagnostic ambiguity in small-n grammatical boundary phenomena. Rather than forcing a binary decision, the paper measures **stability of ambiguity** using:
 
 1. 155-feature binary matrix (morphology, syntax, semantics, phonology)
 2. Distance measurement with permutation testing
@@ -41,7 +42,7 @@ English reciprocals (*each other*, *one another*) are boundary phenomena between
 5. Mixture calibration (Bayesian, Stan)
 6. Posterior predictive checks
 
-Result: ~50/50 pronoun-determinative mixture, stable across analytic choices. Aligns with HPC view of grammatical categories.
+Result: ~50/50 pronoun-determinative mixture, stable across analytic choices. Supports a property-cluster interpretation of grammatical categories.
 
 ## Analysis Pipeline
 

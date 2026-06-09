@@ -30,6 +30,11 @@ Thumbs.db
 STATUS.md
 writing-style.md
 
+# Generated JQL submission outputs
+main-jql.pdf
+main-jql-redline.pdf
+submission/jql_submission_package/
+
 # Conference materials (not part of repo)
 Brochure*.pdf
 Programme*.pdf
