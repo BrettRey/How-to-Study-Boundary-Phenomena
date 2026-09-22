@@ -1,0 +1,8 @@
+feature,pronoun,compound,targets
+compound_word,9,16,"[1, 1]"
+does_not_inflect,1,16,"[1, 1]"
+has_derivationtionally_related_words,12,16,"[1, 1]"
+Must_be_stressed_as_object_after_particle,27,0,"[0, 0]"
+Start_with_th,10,0,"[0, 0]"
+Start_with_hw,0,0,"[0, 0]"
+inflects_for_case,41,12,"[1, 1]"

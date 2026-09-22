@@ -1,0 +1,20 @@
+{
+  "script_sha256": "d46ba49684b89204e4a581aee4d13b7fe0ba155ebfba3413271644bb7b522a77",
+  "analysis_metadata_sha256": "dd68c2a3e8faf5c818aa330540d407c83943c17f4b2a5c5cc1c33254ede831c8",
+  "inputs": {
+    "feature_dictionary.csv": "70b25d48b5296a56383366a4ae6e57dbd76ea18f345c9c43973a4c75aee60f45",
+    "all_specifications.csv": "4f488670502697870c47732f2c207363ed4fc5e6765d663a7a54a5228314fb97",
+    "control_recovery_by_specification.csv": "f7f1aeb6aa1c093102d925f137f8b9d8b189383a21967a4917acb6617dac896e",
+    "coding_sensitivity.csv": "39031b617983f89b5131bf580ce70e3fd508bd52b2d7289490035f949f65320a",
+    "primary_item_results.csv": "00dd4da8aca3b9d649a7b2b00b858eb536ed372f10c3acc8b395e19f44f31c6c",
+    "comparator_resampling.csv": "dd658a8ce8544bc2b0c2f47bbd9b0a6ef97ef5a5db2431171e069a3617353de5",
+    "illustrative_matrix.csv": "60db06ba47e40c5b0930e4e8f972c3ffdad7dc61eff50cadbc84b7aacac27a47"
+  },
+  "outputs": {
+    "numbers.tex": "c88aa44d7e1c199dd2e315d826b82f886da25982edb708cb8d5d03c24b9c0a16",
+    "example_table.tex": "837038fb60da514f859d17ba715e844edff71734a99948b5daf2ae9be415cc08",
+    "coding_table.tex": "130dfc3af8fe3f8b2cb9e4ea39ff15f49da77b5f11c4f5b8f0f33b4467dbe514",
+    "ablation_table.tex": "3031b1ab8ede545e19e41c9d236aa7f83241d896fac7ad326bde7f52f0dd3f00",
+    "primary_table.tex": "2470eb6b4a4cad1df93f0179301b8567761b44d0986e306fca3beb40540931ee"
+  }
+}

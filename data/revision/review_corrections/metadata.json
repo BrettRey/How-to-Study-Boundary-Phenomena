@@ -1,0 +1,33 @@
+{
+  "purpose": "Figure 3 legend clarification after independent review",
+  "script_sha256": "2dfc64d69c0741dd8c78b98dda5f3d1e698897e70023b50e03ec11ca9b84dbc0",
+  "inputs": {
+    "data/revision/results/all_specifications.csv": "4f488670502697870c47732f2c207363ed4fc5e6765d663a7a54a5228314fb97"
+  },
+  "settings": {
+    "pool": "full",
+    "holdout": "item",
+    "reference": "fixed_total"
+  },
+  "metric_labels": {
+    "jaccard": "Jaccard",
+    "dice": "Dice",
+    "hamming": "Hamming",
+    "idf_jaccard": "IDF-weighted Jaccard"
+  },
+  "plotted_rows": 40,
+  "new_random_draws": 0,
+  "analysis_rerun": false,
+  "plot_style": "workspace plot_style.py",
+  "plot_style_sha256": "7b9c9ced9980d6d746bce989bd3b152fb09089ef390822bdb29d56f94596a9d2",
+  "versions": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.4.2",
+    "pandas": "3.0.1"
+  },
+  "outputs": {
+    "specification_percentiles.pdf": "457dd18c24776900404e37308c31a368522ad0cc330112b0fdf11327f28f6d2d",
+    "specification_percentiles.png": "1b611404dad9266d48946f89394cca31b242492be61d37a82b0436201af71a06",
+    "plotted_values.csv": "2db384484106e8f66a7d58758855ab0eb09475326ff9384819381e364780c8d1"
+  }
+}

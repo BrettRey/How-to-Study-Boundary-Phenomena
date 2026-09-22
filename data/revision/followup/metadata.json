@@ -1,0 +1,31 @@
+{
+  "protocol_sha256": "efd025a13816985ab4a03b18d0e8635eeb2d924af5b6d622a102463fe87434d9",
+  "script_sha256": "6e69bec1035d958ceec148f53b8850b26c3b7c657dee32d2e81d387924ae6284",
+  "original_analysis_script_sha256": "f6c6ce073597e8e85b34724125ca4d4c6d31d3976e08696103eb88c234b1f44c",
+  "inputs": {
+    "data/matrix_clean.csv": "f9ebd548b2b695e5cfed2bfd853dc775cce6c5accb44f6f3ae63ba957c2fe059",
+    "data/feature_blocks_by_order.csv": "7846034b00bda1a10a42bc23c89f206d3d7a5454bc6c146edb7db0d747599a4b",
+    "data/revision/comparators.csv": "3ce9741ddf6d48628e42c2f5ad47d03747acb24a88e165df221b4ccc2e50fc84",
+    "data/revision/protocol.json": "475d2ff8bd6522283c45ec684c982ee591d379e51b3a43222cd8fa54f35c2e20",
+    "data/revision/results/all_specifications.csv": "4f488670502697870c47732f2c207363ed4fc5e6765d663a7a54a5228314fb97",
+    "data/revision/results/target_reference_draws.csv.gz": "3682c7d294a92671f8f3d386ee2c4bf904c32f36fcf2cd0c6b3c1a317b4f180d",
+    "code/revision_analysis.py": "f6c6ce073597e8e85b34724125ca4d4c6d31d3976e08696103eb88c234b1f44c"
+  },
+  "numpy": "2.4.2",
+  "pandas": "3.0.1",
+  "new_weighted_rows": 236,
+  "comparison_rows": 472,
+  "new_random_draws": 0,
+  "outputs": {
+    "block_weight_table.tex": "a1c119b2ffa63d8fda2d50b728065b780976440142292d1441b128917903df05",
+    "numbers.tex": "9cc2223488257b2ed526514822994569bdb2148355fd5dc675900a75694c1214",
+    "original_control_margins.csv": "d6fa202b4e68750617e603764db01f460f16efa04671e6577de84526368f2059",
+    "feature_weights.csv": "8165b82dc63a8b4a0901813c1bcaa437b7d8380d77921297369229930c195d02",
+    "block_weight_summary.csv": "70b6eb199e290a5b0747c8720656b6e68990ad9bd4c9c74afeb61c5b18f6f252",
+    "block_weight_item_results.csv": "f41b863b9a9d36ec0ed1aed573bc25ce9cbed7014752288b0307762ad541c686",
+    "original_control_margin_summary.csv": "5c98ebab55176b7a2e8675fdcca6f5fa7a1aee6815e1c079e3f01939c0b9c993",
+    "weighting_comparison.csv": "8313d23ead81c1fb145fb686786bc43388e82d79fa24030783abf5a46f61698d",
+    "target_monte_carlo_details.csv": "fdbc8bc3d452c5123a2060f23bd106397047b73ee2716f7dc177f2523d5ffc1d",
+    "complete_specification_grid.csv": "aff954973e418570961f8202199f6e7777d27de7d86db01b395ae7393f4de26d"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "excluded": [
+    "each_other"
+  ],
+  "retained": 154,
+  "block_counts": {
+    "morph": 65,
+    "synt": 50,
+    "sem": 36,
+    "phon": 3
+  },
+  "note": "Original column identifiers preserved, including spelling errors. Definitions are inherited coding claims, not independent grammatical validation."
+}

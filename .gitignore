@@ -38,3 +38,6 @@ submission/jql_submission_package/
 # Conference materials (not part of repo)
 Brochure*.pdf
 Programme*.pdf
+
+# Referee reports and decision letters are not ours to publish (public repo)
+reviews/

@@ -1,0 +1,50 @@
+{
+  "recorded_before_corrected_results": "2026-09-22",
+  "seed": 20260922,
+  "draws": 20000,
+  "inputs": {
+    "data/matrix_clean.csv": "f9ebd548b2b695e5cfed2bfd853dc775cce6c5accb44f6f3ae63ba957c2fe059",
+    "data/feature_blocks_by_order.csv": "7846034b00bda1a10a42bc23c89f206d3d7a5454bc6c146edb7db0d747599a4b",
+    "data/revision/comparators.csv": "3ce9741ddf6d48628e42c2f5ad47d03747acb24a88e165df221b4ccc2e50fc84"
+  },
+  "feature_filter": "Retain original columns with at least two presences across the fixed 138-row inventory; singleton each_other excluded; raw matrix unchanged.",
+  "primary": {
+    "metric": "jaccard",
+    "feature_drop": "none",
+    "comparator_pool": "full",
+    "holdout": "item",
+    "reference": "fixed_total"
+  },
+  "metrics": [
+    "jaccard",
+    "dice",
+    "hamming",
+    "idf_jaccard"
+  ],
+  "ablations": [
+    "none",
+    "morph",
+    "synt",
+    "sem",
+    "phon"
+  ],
+  "comparator_pools": [
+    "full",
+    "nonlocative"
+  ],
+  "holdouts": [
+    "item",
+    "family"
+  ],
+  "references": [
+    "fixed_total",
+    "within_block"
+  ],
+  "family_definition": "Personal-pronoun paradigm (singular/plural you and they pooled); compound determiner base (every/some/any/no). This addresses one grouping of dependence, not independence of all remaining items.",
+  "idf": "log(N/max(1, number of anchor presences)), estimated separately from the remaining anchors in each fold and held fixed for target randomization.",
+  "percentile": "empirical midrank: (number strictly below plus one half number tied)/B, with absolute tolerance 1e-12; not a posterior category probability.",
+  "distance_lower_tail": "(1 + count(null <= observed + 1e-12))/(B+1); Monte Carlo resolution 1/(B+1).",
+  "interpretation": "Continuous comparison of both distances and their contrast; no binary boundary rule. Report all controls and specifications; do not tune comparator membership or thresholds to preserve an outcome.",
+  "coding_sensitivity": "For every retained feature, delete the column; invert its 0/1 polarity globally; and flip its coded value separately for each reciprocal. Report these as mechanical sensitivity, not established coding errors.",
+  "resampling": "2000 comparator resamples at original numbers of families, with replacement; family draws retain all recorded forms. Recompute distances, report as descriptive composition sensitivity, not additional independent observations."
+}

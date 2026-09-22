@@ -1,0 +1,36 @@
+{
+  "recorded_at_utc": "2026-09-22T14:52:38.023466+00:00",
+  "status": "Post-review exploratory sensitivity; recorded after author approval, before computing new weighted results",
+  "approved_plan_sha256": "163227c520cd515710dd22eec63a62dcfb43c09dd8a562ade38c06ca78a4fd43",
+  "inputs": {
+    "data/matrix_clean.csv": "f9ebd548b2b695e5cfed2bfd853dc775cce6c5accb44f6f3ae63ba957c2fe059",
+    "data/feature_blocks_by_order.csv": "7846034b00bda1a10a42bc23c89f206d3d7a5454bc6c146edb7db0d747599a4b",
+    "data/revision/comparators.csv": "3ce9741ddf6d48628e42c2f5ad47d03747acb24a88e165df221b4ccc2e50fc84",
+    "data/revision/protocol.json": "475d2ff8bd6522283c45ec684c982ee591d379e51b3a43222cd8fa54f35c2e20",
+    "data/revision/results/all_specifications.csv": "4f488670502697870c47732f2c207363ed4fc5e6765d663a7a54a5228314fb97",
+    "data/revision/results/target_reference_draws.csv.gz": "3682c7d294a92671f8f3d386ee2c4bf904c32f36fcf2cd0c6b3c1a317b4f180d",
+    "code/revision_analysis.py": "f6c6ce073597e8e85b34724125ca4d4c6d31d3976e08696103eb88c234b1f44c"
+  },
+  "metric": "Weighted Jaccard: sum(w_j * mismatch) / sum(w_j * union); zero union gives zero",
+  "weights": "w_j=1/number of retained features in feature j\u2019s block; recompute by the same rule after removing morphology",
+  "feature_conditions": [
+    "none",
+    "morph"
+  ],
+  "pool": "full",
+  "holdouts": [
+    "item",
+    "family"
+  ],
+  "targets_excluded_from_all_pools": true,
+  "control_rule": "Existing item/family holdout; positive signed margin means designated group nearer",
+  "new_random_draws": 0,
+  "report": "All 59 items for all four new settings; both distances, contrast, control margin/recovery, and target location relative to each control range; compare with matched original unweighted Jaccard",
+  "interpretation_rules": [
+    "Loss of compound preference establishes sensitivity to this weighting as well as block inclusion.",
+    "Persistence supports only this particular reweighting, not feature validity or an intrinsic role for morphology.",
+    "Report control failures alongside target changes."
+  ],
+  "additional_reporting": "Aggregate existing full grid and control margins; recover exact target counts from saved Jaccard draws; expose saved Monte Carlo error; use exact one-sided 95% binomial zero-hit upper bound 1-0.05**(1/B) for the placement probability",
+  "audit": "Focused independent GPT-5.6 Terra addendum before finalization"
+}

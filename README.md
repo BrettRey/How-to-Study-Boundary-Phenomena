@@ -1,4 +1,10 @@
-# reciprocals2 — measurement-first analysis & robustness checks
+# English reciprocals: revised distance analysis and earlier pipelines
+
+The current manuscript is *Calibrating Diagnostic Conflict: English Reciprocals in Grammatical Feature Space*. Its corrected fixed-anchor analysis, explicit comparator manifest, protocols, and saved outputs are documented in [data/revision/README.md](data/revision/README.md). Run `python3 code/revision_analysis.py`, followed by `python3 code/revision_tables.py`, `python3 code/revision_followup.py`, `python3 code/revision_review_figures.py`, and `python3 code/revision_posthoc.py` to regenerate its results, tables, current figure, and later diagnostics. The [post-review addendum](data/revision/FOLLOWUP.md) documents the recorded block-total comparison; [post hoc diagnostics](data/revision/POSTHOC.md) explain its phonology dependence, morphological feature influence, control endpoints, and benchmark calibration. Build the manuscript with `pdflatex main-jql.tex`, `biber main-jql`, and two further pdfLaTeX runs.
+
+The sections below describe the earlier analysis and the separate pronoun/determinative inventory work. Those files are preserved for provenance; the revised manuscript uses the new pipeline linked above.
+
+## Earlier pipeline
 
 This repo holds the analysis pipeline for English reciprocals. It is measurement-first and transparency-first: one binary item×feature matrix is interrogated via ordination, supervised calibration, permutation with preserved margins, specification curves, posterior predictive checks (PPCs), matched-subset robustness, and a small fake-data recovery/calibration study.
 

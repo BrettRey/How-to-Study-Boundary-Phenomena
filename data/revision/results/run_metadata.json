@@ -1,0 +1,15 @@
+{
+  "protocol_sha256": "475d2ff8bd6522283c45ec684c982ee591d379e51b3a43222cd8fa54f35c2e20",
+  "script_sha256": "f6c6ce073597e8e85b34724125ca4d4c6d31d3976e08696103eb88c234b1f44c",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "numpy": "2.4.2",
+  "pandas": "3.0.1",
+  "draws": 20000,
+  "smoke_test": false,
+  "rows": 9440,
+  "inputs": {
+    "data/matrix_clean.csv": "f9ebd548b2b695e5cfed2bfd853dc775cce6c5accb44f6f3ae63ba957c2fe059",
+    "data/feature_blocks_by_order.csv": "7846034b00bda1a10a42bc23c89f206d3d7a5454bc6c146edb7db0d747599a4b",
+    "data/revision/comparators.csv": "3ce9741ddf6d48628e42c2f5ad47d03747acb24a88e165df221b4ccc2e50fc84"
+  }
+}

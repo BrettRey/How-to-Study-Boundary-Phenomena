@@ -1,0 +1,2830 @@
+{
+  "kind": "post_hoc_deterministic_review_checks",
+  "new_random_draws": 0,
+  "component_columns": [
+    "a",
+    "another",
+    "any",
+    "body",
+    "certain",
+    "day",
+    "each",
+    "either",
+    "ever",
+    "every",
+    "few",
+    "her",
+    "him",
+    "it",
+    "its",
+    "little",
+    "many",
+    "many_a",
+    "my",
+    "no",
+    "no_one",
+    "one",
+    "one_s",
+    "other",
+    "our",
+    "ours",
+    "self",
+    "some",
+    "their",
+    "theirs",
+    "them",
+    "they",
+    "thing",
+    "to",
+    "us",
+    "we",
+    "what",
+    "whatever",
+    "where",
+    "which",
+    "whichever",
+    "who",
+    "whoever",
+    "whom",
+    "whose",
+    "whosoever",
+    "you",
+    "your",
+    "yours"
+  ],
+  "other16_morph_columns": [
+    "Monmorphemic",
+    "accusative_case",
+    "compound_word",
+    "does_not_inflect",
+    "genitive_case",
+    "has_corresponding_word",
+    "has_derivationtionally_related_words",
+    "in_word_formation_e_g_a_many_sided_shape",
+    "inflects_for_case",
+    "nominative_case",
+    "paradigm_has_comparative_and_superlative_forms",
+    "paradigm_has_distinct_acc_form",
+    "paradigm_has_distinct_independent_genitive_form",
+    "paradigm_has_distinct_plural_form",
+    "paradigm_has_distinct_self_form",
+    "paradigm_has_genitive_form"
+  ],
+  "remaining13_morph_columns": [
+    "Monmorphemic",
+    "accusative_case",
+    "genitive_case",
+    "has_corresponding_word",
+    "in_word_formation_e_g_a_many_sided_shape",
+    "inflects_for_case",
+    "nominative_case",
+    "paradigm_has_comparative_and_superlative_forms",
+    "paradigm_has_distinct_acc_form",
+    "paradigm_has_distinct_independent_genitive_form",
+    "paradigm_has_distinct_plural_form",
+    "paradigm_has_distinct_self_form",
+    "paradigm_has_genitive_form"
+  ],
+  "baseline_crosschecks": [
+    {
+      "diagnostic": "all",
+      "weighting": "equal_feature",
+      "rows": 118,
+      "maximum_absolute_error": 5.898059818321144e-16
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_block_total",
+      "rows": 118,
+      "maximum_absolute_error": 8.326672684688674e-17
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_feature",
+      "rows": 118,
+      "maximum_absolute_error": 4.163336342344337e-16
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_block_total",
+      "rows": 118,
+      "maximum_absolute_error": 8.326672684688674e-17
+    }
+  ],
+  "diagnostics": [
+    {
+      "diagnostic": "all",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 56,
+      "failures": [
+        "it_dum"
+      ],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.021559678758266032,
+      "next_pronoun": "they_sing",
+      "next_pronoun_delta": -0.10388833118685004,
+      "compound_min": 0.21603032070354256,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.753363309751842,
+          "d_compound": 0.6815694993430186,
+          "delta": 0.07179381040882338
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7601216628687412,
+          "d_compound": 0.6869940200268123,
+          "delta": 0.07312764284192885
+        }
+      ]
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 56,
+      "failures": [
+        "it_dum"
+      ],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.017254673761724182,
+      "next_pronoun": "he",
+      "next_pronoun_delta": -0.12524841584718283,
+      "compound_min": 0.27253326480623874,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.753363309751842,
+          "d_compound": 0.6815694993430186,
+          "delta": 0.07179381040882338
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7601216628687412,
+          "d_compound": 0.6869940200268123,
+          "delta": 0.07312764284192885
+        }
+      ]
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": true,
+      "holdout": "family",
+      "controls_recovered": 56,
+      "failures": [
+        "it_dum"
+      ],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.02789135066417392,
+      "next_pronoun": "they_sing",
+      "next_pronoun_delta": -0.10521075359343268,
+      "compound_min": 0.2155653284193414,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.7537635018609803,
+          "d_compound": 0.6815694993430186,
+          "delta": 0.07219400251796171
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7604865574749536,
+          "d_compound": 0.6869940200268123,
+          "delta": 0.07349253744814133
+        }
+      ]
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": true,
+      "holdout": "item",
+      "controls_recovered": 56,
+      "failures": [
+        "it_dum"
+      ],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.023948282453593817,
+      "next_pronoun": "he",
+      "next_pronoun_delta": -0.12685093604989484,
+      "compound_min": 0.2720682725220376,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.7537635018609803,
+          "d_compound": 0.6815694993430186,
+          "delta": 0.07219400251796171
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7604865574749536,
+          "d_compound": 0.6869940200268123,
+          "delta": 0.07349253744814133
+        }
+      ]
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.03550448155958619,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.12805903106327354,
+      "compound_min": 0.19174699586656963,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.7088579692854635,
+          "d_compound": 0.6690820933080995,
+          "delta": 0.039775875977363984
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7228114730155731,
+          "d_compound": 0.6772670296559097,
+          "delta": 0.045544443359663456
+        }
+      ]
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.04299407694232049,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1317315472947881,
+      "compound_min": 0.24681393504615323,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.7088579692854635,
+          "d_compound": 0.6690820933080995,
+          "delta": 0.039775875977363984
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7228114730155731,
+          "d_compound": 0.6772670296559097,
+          "delta": 0.045544443359663456
+        }
+      ]
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_feature",
+      "altered_dummy_it": true,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.029014676620764623,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.12805903106327354,
+      "compound_min": 0.19125326623291705,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.7092920559400119,
+          "d_compound": 0.6690820933080995,
+          "delta": 0.040209962631912344
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7231929431059338,
+          "d_compound": 0.6772670296559097,
+          "delta": 0.04592591345002417
+        }
+      ]
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_feature",
+      "altered_dummy_it": true,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.03637599829693361,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.13127198847125865,
+      "compound_min": 0.24632020541250066,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.7092920559400119,
+          "d_compound": 0.6690820933080995,
+          "delta": 0.040209962631912344
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7231929431059338,
+          "d_compound": 0.6772670296559097,
+          "delta": 0.04592591345002417
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_components",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.030347811118239254,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.12958331815187563,
+      "compound_min": 0.22208719263382787,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6803808378816427,
+          "d_compound": 0.6243745568368413,
+          "delta": 0.05600628104480143
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6803808378816427,
+          "d_compound": 0.6243745568368413,
+          "delta": 0.05600628104480143
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_components",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.035721045405633034,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.13037297442517315,
+      "compound_min": 0.27208289928394636,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6803808378816427,
+          "d_compound": 0.6243745568368413,
+          "delta": 0.05600628104480143
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6803808378816427,
+          "d_compound": 0.6243745568368413,
+          "delta": 0.05600628104480143
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 56,
+      "failures": [
+        "it_dum"
+      ],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.02044842489151144,
+      "next_pronoun": "they_sing",
+      "next_pronoun_delta": -0.048640590561514485,
+      "compound_min": 0.1907818326355719,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.7248166149678301,
+          "d_compound": 0.7061545503014847,
+          "delta": 0.018662064666345457
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7248166149678301,
+          "d_compound": 0.7061545503014847,
+          "delta": 0.018662064666345457
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 56,
+      "failures": [
+        "it_dum"
+      ],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.01660494759246156,
+      "next_pronoun": "he",
+      "next_pronoun_delta": -0.07015107869362636,
+      "compound_min": 0.24703488859330136,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.7248166149678301,
+          "d_compound": 0.7061545503014847,
+          "delta": 0.018662064666345457
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7248166149678301,
+          "d_compound": 0.7061545503014847,
+          "delta": 0.018662064666345457
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": true,
+      "holdout": "family",
+      "controls_recovered": 56,
+      "failures": [
+        "it_dum"
+      ],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.027985244781801977,
+      "next_pronoun": "they_sing",
+      "next_pronoun_delta": -0.05027161629547605,
+      "compound_min": 0.19021249178101907,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.72534809156638,
+          "d_compound": 0.7061545503014847,
+          "delta": 0.019193541264895364
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.72534809156638,
+          "d_compound": 0.7061545503014847,
+          "delta": 0.019193541264895364
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": true,
+      "holdout": "item",
+      "controls_recovered": 56,
+      "failures": [
+        "it_dum"
+      ],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.024670030058506875,
+      "next_pronoun": "he",
+      "next_pronoun_delta": -0.07221057526113206,
+      "compound_min": 0.2464655477387485,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.72534809156638,
+          "d_compound": 0.7061545503014847,
+          "delta": 0.019193541264895364
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.72534809156638,
+          "d_compound": 0.7061545503014847,
+          "delta": 0.019193541264895364
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.06692829446812099,
+      "next_pronoun": "their_plur",
+      "next_pronoun_delta": -0.15980833234096825,
+      "compound_min": 0.13237740967905365,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6275402401733168,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.07640866825974069
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6275402401733168,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.07640866825974069
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.07457851680489425,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.16725016470762066,
+      "compound_min": 0.18649923385197625,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6275402401733168,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.07640866825974069
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6275402401733168,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.07640866825974069
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": true,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.057902263573205826,
+      "next_pronoun": "their_plur",
+      "next_pronoun_delta": -0.160621287595911,
+      "compound_min": 0.13171659026297777,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6282054286433832,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.07574347978967422
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6282054286433832,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.07574347978967422
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": true,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.06530428985710535,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.16665757211502807,
+      "compound_min": 0.18583841443590038,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6282054286433832,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.07574347978967422
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6282054286433832,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.07574347978967422
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph_no_particle_stress",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.030954517538945403,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.08561042020826537,
+      "compound_min": 0.13607310373217096,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6458833322290838,
+          "d_compound": 0.7061545503014847,
+          "delta": -0.06027121807240088
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6458833322290838,
+          "d_compound": 0.7061545503014847,
+          "delta": -0.06027121807240088
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph_no_particle_stress",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.042935737833236676,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.09447367527971462,
+      "compound_min": 0.1923261596899004,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6458833322290838,
+          "d_compound": 0.7061545503014847,
+          "delta": -0.06027121807240088
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6458833322290838,
+          "d_compound": 0.7061545503014847,
+          "delta": -0.06027121807240088
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph_no_phon",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.06978653011630909,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1432933037129247,
+      "compound_min": 0.09988699464078754,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.5934547201754283,
+          "d_compound": 0.7061545503014847,
+          "delta": -0.11269983012605633
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.5934547201754283,
+          "d_compound": 0.7061545503014847,
+          "delta": -0.11269983012605633
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph_no_phon",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.07885534946729811,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.14783034252152438,
+      "compound_min": 0.156140050598517,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.5934547201754283,
+          "d_compound": 0.7061545503014847,
+          "delta": -0.11269983012605633
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.5934547201754283,
+          "d_compound": 0.7061545503014847,
+          "delta": -0.11269983012605633
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph_no_phon",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.07849312585154689,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1551263372234657,
+      "compound_min": 0.1229307412057804,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6126302625172071,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.09131864591585037
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6126302625172071,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.09131864591585037
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_morph_no_phon",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.08665740506892372,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.15586924036521765,
+      "compound_min": 0.177052565378703,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6126302625172071,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.09131864591585037
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6126302625172071,
+          "d_compound": 0.7039489084330575,
+          "delta": -0.09131864591585037
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_other16_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.06678683265550611,
+      "next_pronoun": "their_plur",
+      "next_pronoun_delta": -0.15283538373211425,
+      "compound_min": 0.11304177864881926,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6700359394563651,
+          "d_compound": 0.7435977386970984,
+          "delta": -0.07356179924073336
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6904727334140334,
+          "d_compound": 0.7489448089299923,
+          "delta": -0.0584720755159589
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_other16_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.07710385199207959,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.1595913896970398,
+      "compound_min": 0.17200288049691803,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6700359394563651,
+          "d_compound": 0.7435977386970984,
+          "delta": -0.07356179924073336
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6904727334140334,
+          "d_compound": 0.7489448089299923,
+          "delta": -0.0584720755159589
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_phon",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.04510854178166546,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.11887787350144607,
+      "compound_min": 0.1506000962740619,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6629544041078762,
+          "d_compound": 0.6815694993430186,
+          "delta": -0.018615095235142376
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6751614154372615,
+          "d_compound": 0.6869940200268123,
+          "delta": -0.011832604589550821
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_phon",
+      "weighting": "equal_block_total",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.053740283053896,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.12351023121613869,
+      "compound_min": 0.20710304037675809,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6629544041078762,
+          "d_compound": 0.6815694993430186,
+          "delta": -0.018615095235142376
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.6751614154372615,
+          "d_compound": 0.6869940200268123,
+          "delta": -0.011832604589550821
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_remaining13_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.038813803376718026,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1159144054862088,
+      "compound_min": 0.1681273070213306,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6832047010762244,
+          "d_compound": 0.6807958084273874,
+          "delta": 0.0024088926488370355
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.70113131519777,
+          "d_compound": 0.6886910398081394,
+          "delta": 0.012440275389630662
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_remaining13_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.048220763581160786,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.12006849369819617,
+      "compound_min": 0.22283360332727903,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.6832047010762244,
+          "d_compound": 0.6807958084273874,
+          "delta": 0.0024088926488370355
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.70113131519777,
+          "d_compound": 0.6886910398081394,
+          "delta": 0.012440275389630662
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_shared3_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "family",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.05864245182002703,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1643818181700909,
+      "compound_min": 0.1412306074481423,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.700601342052168,
+          "d_compound": 0.7289627163974888,
+          "delta": -0.028361374345320822
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7160466911578556,
+          "d_compound": 0.734838436812121,
+          "delta": -0.018791745654265446
+        }
+      ]
+    },
+    {
+      "diagnostic": "no_shared3_morph",
+      "weighting": "equal_feature",
+      "altered_dummy_it": false,
+      "holdout": "item",
+      "controls_recovered": 57,
+      "failures": [],
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0668028906434488,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1699753112734136,
+      "compound_min": 0.20048220199011801,
+      "targets": [
+        {
+          "lemma": "each_other",
+          "d_pronoun": 0.700601342052168,
+          "d_compound": 0.7289627163974888,
+          "delta": -0.028361374345320822
+        },
+        {
+          "lemma": "one_another",
+          "d_pronoun": 0.7160466911578556,
+          "d_compound": 0.734838436812121,
+          "delta": -0.018791745654265446
+        }
+      ]
+    }
+  ],
+  "original_grid_endpoints": [
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "morph",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0856549363289967,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1611891987213452,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0833096035175095
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0833096035175095
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "morph",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0101541147889462,
+      "next_pronoun": "they_sing",
+      "next_pronoun_delta": -0.0518530264588619,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0203994244998629
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0203994244998629
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "morph",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0210372847266523,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.1066722683726236,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0397289048432883
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0397289048432883
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "morph",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0669282944681209,
+      "next_pronoun": "their_plur",
+      "next_pronoun_delta": -0.159808332340968,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0764086682597408
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0764086682597408
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "none",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0461565851937795,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1283615686525429,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0482520695214281
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0549995810877577
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "none",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0104861354861354,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0268734643734644,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0330218561925878
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0362686094393411
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "none",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0069748871273771,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0631324827859803,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0350402621334876
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0465589496082586
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "none",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0355044815595858,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1280590310632736,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0397758759773642
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0455444433596636
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "phon",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0541186477884678,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1171877104408019,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0398214706489885
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0471814127014014
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "phon",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0046089135493109,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0249015571863253,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0277015021805847
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0310127604587303
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "phon",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0093847027794194,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0540134982757343,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0326733683833081
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.044808197142363
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "phon",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0418392514448082,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1180087890391612,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0322300913334905
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0387212001777128
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "sem",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0530138482051729,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1509793758215571,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.2198423775013826
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.220334011298714
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "sem",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0105502748511222,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0265832569857993,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0778084952459694
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0820457833815626
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "sem",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0265435878924541,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0831446895951787,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.1009254477276652
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.1046450139058629
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "sem",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0410723315044915,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1516416332538421,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.1734350661593181
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.1717785814251597
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "synt",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0097809769512362,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0895673016970545,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0405532506274427
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0498193004170413
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "synt",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0366099272349272,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0062045218295218,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0356472795497185
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0404549718574109
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "synt",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0226682176493472,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0212291196206931,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0284767681190722
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0445630060134403
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "family",
+      "drop": "synt",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0061628204456193,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0847049370168963,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0363018819115236
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.043916585566144
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "morph",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0947984716620113,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1657002992352357,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0833096035175095
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0833096035175095
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "morph",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0153089887640449,
+      "next_pronoun": "they_sing",
+      "next_pronoun_delta": -0.0532303370786516,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0203994244998629
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0203994244998629
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "morph",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0339336152480194,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.1076997273862878,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0397289048432883
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0397289048432883
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "morph",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0745785168048943,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.1672501647076207,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0764086682597408
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0764086682597408
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "none",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0554648842032331,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1330625613661082,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0482520695214281
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0549995810877577
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "none",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.006168831168831,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0310064935064935,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0330218561925878
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0362686094393411
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "none",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0207754790944173,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0743896482829159,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0350402621334876
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0465589496082586
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "none",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0429940769423199,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1317315472947882,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0397758759773642
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0455444433596636
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "phon",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0637695027991284,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1217626268113623,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0398214706489885
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0471814127014014
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "phon",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0001655629139072,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0289735099337747,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0277015021805847
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0310127604587303
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "phon",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0235286800464203,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0655928407367599,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0326733683833081
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.044808197142363
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "phon",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0497004546334117,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1214724166467885,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0322300913334905
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0387212001777128
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "sem",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0590568233371687,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1516167706700238,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.2198423775013826
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.220334011298714
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "sem",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0070974576271185,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0295550847457627,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0778084952459694
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0820457833815626
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "sem",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0365088598133418,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0894973813799834,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.1009254477276652
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.1046450139058629
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "sem",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0455568788865469,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1504499463536595,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.1734350661593181
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.1717785814251597
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "synt",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0022460414874038,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0984272500467169,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0405532506274427
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0498193004170413
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "synt",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0322115384615384,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0110576923076923,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0356472795497185
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0404549718574109
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "synt",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0062334060267332,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.040347924489919,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0284767681190722
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0445630060134403
+        }
+      ]
+    },
+    {
+      "pool": "full",
+      "holdout": "item",
+      "drop": "synt",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0033392854481364,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0942470661195818,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0363018819115236
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.043916585566144
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "morph",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0767147238579003,
+      "next_pronoun": "your_plur",
+      "next_pronoun_delta": -0.1232380478553555,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0434876888794185
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0434876888794185
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "morph",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0164743395080473,
+      "next_pronoun": "they_sing",
+      "next_pronoun_delta": -0.0534916032378881,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0126747053987393
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0126747053987393
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "morph",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0190480581591617,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.093268553736178,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0202485806203879
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0202485806203879
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "morph",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0605268822062013,
+      "next_pronoun": "your_plur",
+      "next_pronoun_delta": -0.1346940822048019,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0444737395436665
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0444737395436665
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "none",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0322435622982703,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1291538758964037,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0822493110588769
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0913711221423614
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "none",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0077805077805077,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0325552825552825,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0384331116038432
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0427621159328476
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "none",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0002927737553981,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.065766756439238,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0533653531406038
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0675668130303813
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "none",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0257237289700114,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1284087354543847,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0685685133613328
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0759323308459946
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "phon",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0402056248929586,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1182209343438825,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0738187121864373
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0835529537560051
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "phon",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0018495316508561,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0306962591730803,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0332202659774942
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0376352770150217
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "phon",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.002335356572041,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.057500409323398,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0512174280909136
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0659831757935672
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "phon",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0320584988552338,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1185437570251642,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0610227287174591
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0691090876640437
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "sem",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0173838575173633,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1424456805963018,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.2556108711886502
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.260249157422556
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "sem",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0100206138341731,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0317033134829745,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0804568003307151
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0861065178448395
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "sem",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0148596731627922,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0846392008531669,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.1180111145611141
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.1263237805672934
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "sem",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0169497447655814,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1452714911864845,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.20522732884832
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.2064188215862332
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "synt",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0074244187885186,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0893862719293311,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.066340667424478
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0792463595063987
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "synt",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0346067221067221,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0074064449064449,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0420575359599749
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0484677923702314
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "synt",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0297437628487705,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0137898643736036,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0462763800154139
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0657716729771099
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "family",
+      "drop": "synt",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0044985704761633,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.08404930062569,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.058514497194791
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0687968577697857
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "morph",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0858582591909149,
+      "next_pronoun": "their_sing",
+      "next_pronoun_delta": -0.1321005850603211,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0434876888794185
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0434876888794185
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "morph",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.021629213483146,
+      "next_pronoun": "they_sing",
+      "next_pronoun_delta": -0.0548689138576778,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0126747053987393
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0126747053987393
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "morph",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0347722491300143,
+      "next_pronoun": "its",
+      "next_pronoun_delta": -0.0980570474503682,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0202485806203879
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0202485806203879
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "morph",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0681771045429747,
+      "next_pronoun": "their_sing",
+      "next_pronoun_delta": -0.1428473702301297,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": -0.0444737395436665
+        },
+        {
+          "lemma": "one_another",
+          "delta": -0.0444737395436665
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "none",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0415518613077239,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1338548686099691,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0822493110588769
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0913711221423614
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "none",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0034632034632033,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0366883116883117,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0384331116038432
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0427621159328476
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "none",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0158224319913754,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0795491836102858,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0533653531406038
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0675668130303813
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "none",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0332133243527454,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1320812516858992,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0685685133613328
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0759323308459946
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "phon",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0498564799036191,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1227958507144429,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0738187121864373
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0835529537560051
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "phon",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0025938189845474,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0347682119205297,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0332202659774942
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0376352770150217
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "phon",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0182362955483575,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.071601344857117,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0512174280909136
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0659831757935672
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "phon",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0399197020438373,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1220073846327916,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0610227287174591
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0691090876640437
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "sem",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0234268326493591,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1430830754447686,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.2556108711886502
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.260249157422556
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "sem",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0065677966101694,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0346751412429378,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0804568003307151
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0861065178448395
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "sem",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.024975179657585,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0916311958475047,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.1180111145611141
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.1263237805672934
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "sem",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0214342921476368,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.1440798042863018,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.20522732884832
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.2064188215862332
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "synt",
+      "metric": "dice",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0046025996501214,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0982462202789936,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.066340667424478
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0792463595063987
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "synt",
+      "metric": "hamming",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0302083333333333,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0122596153846154,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0420575359599749
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0484677923702314
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "synt",
+      "metric": "idf_jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": 0.0111960824623584,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0355619309254415,
+      "failures": [
+        "it_dum"
+      ],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.0462763800154139
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0657716729771099
+        }
+      ]
+    },
+    {
+      "pool": "nonlocative",
+      "holdout": "item",
+      "drop": "synt",
+      "metric": "jaccard",
+      "pronoun_endpoint": "it_dum",
+      "pronoun_max": -0.0050035354175924,
+      "next_pronoun": "itself",
+      "next_pronoun_delta": -0.0935914297283756,
+      "failures": [],
+      "targets": [
+        {
+          "lemma": "each_other",
+          "delta": 0.058514497194791
+        },
+        {
+          "lemma": "one_another",
+          "delta": 0.0687968577697857
+        }
+      ]
+    }
+  ],
+  "control_benchmark": [
+    {
+      "role": "pronoun_anchor",
+      "non_designated_distance": "d_compound",
+      "n": 41,
+      "median": 0.0018499075046247,
+      "maximum": 0.1021448927553622,
+      "below_005": 35,
+      "zero_hits": [
+        "hers",
+        "itself",
+        "theirs_sing",
+        "yours_plur"
+      ],
+      "minimum_distance_to_other": 0.7222448497108598,
+      "maximum_distance_to_own": 0.7647617862771637,
+      "maximum_distance_to_own_without_dummy": 0.6077943668553462
+    },
+    {
+      "role": "compound_anchor",
+      "non_designated_distance": "d_pronoun",
+      "n": 16,
+      "median": 0.0003999800009999,
+      "maximum": 0.0529973501324933,
+      "below_005": 15,
+      "zero_hits": [
+        "everyone"
+      ],
+      "minimum_distance_to_other": 0.733660770843567,
+      "maximum_distance_to_own": 0.5701490339725636,
+      "maximum_distance_to_own_without_dummy": 0.5701490339725636
+    }
+  ],
+  "feature_counts": [
+    {
+      "feature": "compound_word",
+      "pronoun": 9,
+      "compound": 16,
+      "targets": [
+        1,
+        1
+      ]
+    },
+    {
+      "feature": "does_not_inflect",
+      "pronoun": 1,
+      "compound": 16,
+      "targets": [
+        1,
+        1
+      ]
+    },
+    {
+      "feature": "has_derivationtionally_related_words",
+      "pronoun": 12,
+      "compound": 16,
+      "targets": [
+        1,
+        1
+      ]
+    },
+    {
+      "feature": "Must_be_stressed_as_object_after_particle",
+      "pronoun": 27,
+      "compound": 0,
+      "targets": [
+        0,
+        0
+      ]
+    },
+    {
+      "feature": "Start_with_th",
+      "pronoun": 10,
+      "compound": 0,
+      "targets": [
+        0,
+        0
+      ]
+    },
+    {
+      "feature": "Start_with_hw",
+      "pronoun": 0,
+      "compound": 0,
+      "targets": [
+        0,
+        0
+      ]
+    },
+    {
+      "feature": "inflects_for_case",
+      "pronoun": 41,
+      "compound": 12,
+      "targets": [
+        1,
+        1
+      ]
+    }
+  ],
+  "inputs": {
+    "data/matrix_clean.csv": "f9ebd548b2b695e5cfed2bfd853dc775cce6c5accb44f6f3ae63ba957c2fe059",
+    "data/feature_blocks_by_order.csv": "7846034b00bda1a10a42bc23c89f206d3d7a5454bc6c146edb7db0d747599a4b",
+    "data/revision/comparators.csv": "3ce9741ddf6d48628e42c2f5ad47d03747acb24a88e165df221b4ccc2e50fc84",
+    "data/revision/results/all_specifications.csv": "4f488670502697870c47732f2c207363ed4fc5e6765d663a7a54a5228314fb97",
+    "data/revision/followup/block_weight_item_results.csv": "f41b863b9a9d36ec0ed1aed573bc25ce9cbed7014752288b0307762ad541c686"
+  },
+  "script_sha256": "e71414f9eaafd166a0500c134bd5d1ca2ee459c540347e18e02a9aa2ce8dc8e7"
+}

@@ -19,6 +19,8 @@
 \geometry{margin=1.25in}
 \usepackage{setspace}
 \doublespacing
+\clubpenalty=10000
+\widowpenalty=10000
 \setlength{\parindent}{0.5in}
 
 % ~--  Captions ~-- 
@@ -56,9 +58,8 @@
   filecolor=magenta,
   citecolor=blue,
   urlcolor=cyan,
-  pdftitle={How to Study Boundary Phenomena},
-  pdfkeywords={boundary phenomena, English reciprocals, grammatical categories, pronouns, determinatives},
-  pdfpagemode=FullScreen,
+  pdftitle={Calibrating Diagnostic Conflict},
+  pdfkeywords={grammatical categories, English reciprocals, linguistic measurement, distance measures, sensitivity analysis},
 }
 \else
 \hypersetup{
@@ -67,20 +68,20 @@
   filecolor=magenta,
   citecolor=blue,
   urlcolor=cyan,
-  pdftitle={Measuring Stable Diagnostic Ambiguity},
-  pdfkeywords={quantitative linguistics, linguistic measurement, grammatical categories, boundary phenomena, English reciprocals},
-  pdfpagemode=FullScreen,
+  pdftitle={Calibrating Diagnostic Conflict},
+  pdfkeywords={grammatical categories, English reciprocals, linguistic measurement, distance measures, sensitivity analysis},
 }
 \fi
 
 % ~--  Bibliography: biblatex ~-- 
 \usepackage[backend=biber,style=unified,natbib=true,maxbibnames=99]{biblatex}
 \addbibresource{refs.bib}
+\addbibresource{references-local.bib}
 
 \ifcjlsubmission
-\title{How to Study Boundary Phenomena:\\English Reciprocals and the Limits of Categorization}
+\title{Calibrating Diagnostic Conflict:\\English Reciprocals in Grammatical Feature Space}
 \else
-\title{Measuring Stable Diagnostic Ambiguity:\\A Quantitative Workflow for Small-\texorpdfstring{$n$}{n} Grammatical Boundary Phenomena}
+\title{Calibrating Diagnostic Conflict:\\English Reciprocals in Grammatical Feature Space}
 \fi
 
 \ifcjlsubmission
@@ -99,320 +100,353 @@ brett.reynolds@humber.ca}
 
 \ifcjlsubmission
 \else
-\noindent\textbf{Word count:} 6,309, inclusive of abstract, references, captions, footnotes, and end matter.
+% Word count will be refreshed when the revision is finalized.
 \fi
 
 \begin{abstract}
-\noindent 
-\ifcjlsubmission
-English reciprocals (\mention{each other} and \mention{one another}) are a small-$n$ boundary case: there are only two items, but both show persistent evidence of affiliation with pronouns and with compound determinatives. Instead of forcing a binary categorization, this paper measures the \term{stability of diagnostic ambiguity}: whether a measurement model repeatedly places the items at an interface. Using a 155-property profile spanning morphology, syntax, semantics, and phonology, I locate the reciprocals in grammatical space and then ask whether that location survives randomized benchmarks, alternative specifications, rotated comparison sets, predictive blending, and anchor calibration. Across analyses, reciprocals occupy a stable boundary position between canonical pronouns and compound determinatives. I argue that this pattern is compatible with treating grammatical categories as projectible property clusters, and I offer the method as a transparent template for other small-$n$ categorization problems.
-\else
-Some grammatical boundary cases are small by design: the target inventory is fixed and ordinary large-sample classification is unavailable. This paper develops a quantitative workflow for such cases. Rather than treating inconsistent diagnostics as failed classification, it asks whether diagnostic ambiguity is stable across separately varied measurement choices.
-
-Using English reciprocals (\mention{each other} and \mention{one another}) as a proof-of-concept case, I build a 155-property profile spanning morphology, syntax, semantics, and phonology, locate the targets in grammatical feature space, and test that location with constrained randomization, specification-curve analysis, comparator-set rotation, predictive blending, and anchor calibration.
-
-Across analyses, the reciprocals occupy a stable boundary position between canonical pronouns and compound determinatives. The result is not a forced category assignment, but a measurement-level account of how small-$n$ grammatical boundary phenomena can be made inspectable. I argue that stable diagnostic ambiguity is theoretically informative when grammatical categories are treated as projectible property clusters.
-\fi
+\singlespacing
+Grammatical diagnostics can disagree without establishing a boundary case. This paper calibrates a comparison of English reciprocals with personal pronouns and compound determinatives. An inherited binary matrix supplies 154 morphological, phonological, semantic, and syntactic features. The analysis reports distances to both groups, evaluates held-out controls, and compares observed profiles with fixed-anchor randomizations. Under primary Jaccard distance, all 57 controls are nearer their designated group. Each reciprocal is nearer each group than any member of the other group is, but farther from it than its own members, apart from dummy \mention{it}. Their contrasts lie between the two control ranges. The modest compound preference retains its sign across alternative measures and single-feature perturbations, but depends on a few whole-word morphological codes. Without morphology, both reciprocals favour personal pronouns; placements within that control range depend on its dummy-\mention{it} endpoint. Equal total weight per block offsets the reversal through two heavily weighted phonological columns. Balancing only the semantic and syntactic blocks strengthens the pronoun preference. These internal checks neither validate the coding nor assign a grammatical category.
 \end{abstract}
-\ifcjlsubmission
-\noindent\textbf{Keywords:} boundary phenomena; English reciprocals; grammatical categories; pronouns; determinatives
-\fi
+
+\noindent\textbf{Keywords:} grammatical categories; English reciprocals; linguistic measurement; distance measures; sensitivity analysis
+\clearpage
+
+\input{data/revision/results/numbers.tex}
+\input{data/revision/followup/numbers.tex}
 
 \section{Introduction}
 
-Quantitative linguistics often works with large sets of tokens, texts, or languages. Grammatical boundary phenomena create a different measurement problem: the target inventory may be fixed and tiny.
+English reciprocals, \mention{each other} and \mention{one another}, invite comparison with several parts of the grammatical system. Their anaphoric dependencies resemble those of reflexive personal pronouns. Their internal structure invites comparison with compound determinatives such as \mention{everybody} and \mention{something}. A quantitative account needs to specify what these comparisons measure and show that the procedure distinguishes familiar members of the comparison groups before interpreting the reciprocals.
 
-English has only two central reciprocals, \mention{each other} and \mention{one another}, and their scarcity is not a sampling accident. Those two forms are the inventory. In such cases, ordinary large-sample classification is unavailable, while traditional single-diagnostic argument invites what \textcite{croft2001radical} calls \enquote{methodological opportunism}: analysts may select the tests that support a preferred category.
+Characterizing a reciprocal subclass raises a different problem from assigning an item to well-characterized reference categories. With only two reciprocal types, there's little evidence for the range of profiles such a subclass supports, and holding one type out leaves only the other for learning its properties. More tokens or speakers can improve the description of either type but don't add lexical types. The analysis below evaluates each item against larger reference groups without fitting a decision rule to the reciprocals.
 
-This paper treats small-$n$ boundary cases as linguistic measurement problems.\footnote{Abbreviations used below are as follows: \textit{CGEL} = \textit{The Cambridge Grammar of the English Language}; \abbr{MCA} = Multiple Correspondence Analysis; \abbr{IDF} = inverse document frequency; $k$-\abbr{NN} = $k$-nearest neighbours; \abbr{PCoA} = Principal Coordinates Analysis; \abbr{PPC} = posterior predictive check; \abbr{PSIS-LOO} = Pareto-smoothed importance-sampling leave-one-out; and Type~S / Type~M = sign / magnitude errors.} Instead of asking which diagnostic wins, I measure the \term{stability of diagnostic ambiguity}: whether a specified measurement model repeatedly places the target items at an interface rather than resolving them into one category.
+I treat each reciprocal as a separate target in a fixed, theory-informed inventory. I ask how close the target is to each comparison group, how strongly it favours one group, and whether its comparative profile differs from those of clear items evaluated by the same procedure. Only after these questions are answered does it become useful to ask which aspects of the result survive changes in distance measure, feature selection, or comparator composition.
 
-Here, ambiguity is epistemic. It concerns what the instrument can resolve about categorial placement, not whether the categories themselves are intrinsically vague.
+In \textit{The Cambridge Grammar of the English Language} (henceforth \textit{CGEL}), reciprocals are pronouns and items such as \mention{everyone} are compound determinatives. The latter share pre-head modifiers with their determinative bases, allow restrictors and ordinary post-head modifiers, and lack the deictic or anaphoric interpretation of core pronouns \citep[Ch.~5, \S9.6]{huddleston2002}. Reciprocals instead require a relatively close antecedent, have genitive forms, and lack person contrasts \citep[Ch.~5, \S10.1.2]{huddleston2002}.
 
-The contribution is a workflow for making such ambiguity inspectable. The workflow is:
+The ability to head an NP doesn't settle lexical category: both groups do so. Nor does resemblance between an internal component and an independently occurring determinative establish the category of a compound. The comparison concerns the distribution and morphology of the whole expression.
 
-\begin{enumerate}
-  \item encode a theory-informed item-by-property matrix;
-  \item locate the target items relative to clear anchors in full-dimensional feature space;
-  \item define an interpretable distance contrast;
-  \item compare that contrast to a constrained reference distribution;
-  \item vary metrics, feature blocks, and comparator sets;
-  \item calibrate boundary position with predictive blending and anchor recovery; and
-  \item report stable ambiguity only when uncertainty localizes to the boundary items while clear anchors remain recoverable.
-\end{enumerate}
+\textcite[\S4]{reynolds2021} proposed testing whether \mention{each other} and \mention{one another} would fit better with compound determinatives, citing their morphological resemblance and contrasting it with \textit{CGEL}'s restriction on reciprocal dependents. That suggestion motivates this comparison. A broad profile can expose dependencies missed when diagnostics are selected to support a preferred analysis \citep{croft2001}. But its feature counts and coding also determine which similarities receive most weight.
 
-I demonstrate the workflow using English reciprocals. Standard grammars classify reciprocals as pronouns. Their internal composition points toward the determinative system: \mention{each} in \mention{each other} is a determinative, and both \mention{one} and \mention{another} in \mention{one another} are determinatives.
+To expose those dependencies, I first define the coded objects and comparison groups, then define distances and their aggregation. Next, I evaluate held-out controls, compare each target with fixed-anchor reference distributions, and report sensitivity to feature and comparator choices. The procedure supplies continuous measurements of both proximity and sensitivity to these choices.
 
-This places reciprocals near the compound determinatives in \textcite[henceforth \textit{CGEL}; Ch. 5 \S9.6]{huddleston2002}: items like \mention{somebody} and \mention{anybody} that realize fused determiner--head functions \parencite{Payne2007}. Within that architecture, category and function come apart, so a morphologically complex item can belong to the determinative category even when it never appears as a determiner with an overt nominal head. Reciprocals press on that architecture because their parts are determinatives while the whole is traditionally classified as a pronoun.
+\section{Data and comparison groups}
+\label{sec:data}
 
-The measurement instrument is a 155-feature profile covering morphology, syntax, semantics, and phonology across the 138 words that form the universe of pronouns and determinatives as defined by \textit{CGEL}. This makes theoretical commitments explicit rather than dispersing them across selected diagnostics.
+\subsection{What the matrix records}
 
-The logic is analogous to mapping vowel space: after a language's vowel space is calibrated, a single token can be located relative to established categories. A lone production near the /i/--/\textipa{I}/ boundary can be characterized as boundary-dwelling even though the token is ultimately one or the other; the issue is that the acoustic measurements do not resolve the distinction. The 155-feature matrix plays the same role here, with its own resolution limits.
+\textcite[\S2.2]{reynolds2021} coded 138 word forms against 232 binary properties: 139 morphological, three phonological, 36 semantic, and 54 syntactic. The source used forms rather than lexemes because syntactic distributions can differ among forms of a paradigm. Each cell records the judgement that a form may exhibit a property or never does.
 
-The quantitative analyses ask whether the reciprocal location is stable under a set of prespecified pressures. A boundary item should retain a boundary position across reasonable choices of distance metric, regularization, and feature ablation (E1). Different feature families may pull in different directions when the encoded properties reflect partly distinct grammatical pressures (E2). Clear anchors should calibrate cleanly under the same analyses (E3).
+This analysis begins with the supplied 155-feature archive, which retains 66 morphological, three phonological, 36 semantic, and 50 syntactic features. The criteria for the earlier reduction aren't reconstructed here. More than half of the morphological columns were removed upstream, leaving a provenance gap in the block on which the contrast's direction depends (\S\ref{sec:sensitivity}). The supplied feature-block map and the singleton filter below apply to this archive.
 
-A one-parameter blend fit to anchor profiles should place boundary items near parity (E4). The relevant distance contrasts should remain interpretable when compared to reference distributions that preserve the instrument's marginals (E5). These expectations turn inconclusive diagnostics into testable measurement claims.
+Rows distinguish both forms and specified uses. For example, \mention{she}, accusative \mention{her}, dependent genitive \mention{her}, \mention{hers}, and \mention{herself} have separate rows. The inventory also distinguishes ordinary and dummy \mention{it}, singular and plural uses of \mention{they}, and pronoun and determinative uses of \mention{we}. The inherited column name \texttt{lemma} is an identifier, not a claim that these are 138 distinct lexemes. I refer to them below as coded forms or items.
 
-The theoretical payoff is compatible with treating grammatical categories as projectible property clusters \parencite{miller2021}. On that view, categories are useful because seeing part of a profile supports projection to other properties: clear pronouns should behave pronoun-like across new diagnostics, and clear compound determinatives should behave in line with their profile.
+The full inventory contains 73 rows labelled determinative and 65 labelled pronoun in the source. It includes the four locative compounds \mention{everywhere}, \mention{somewhere}, \mention{anywhere}, and \mention{nowhere}, as well as temporal items such as \mention{today} and \mention{tomorrow}. These inventory labels are preserved; membership in the narrower comparison groups is recorded separately.
 
-Boundary items are informative when those projections conflict in stable ways. The paper does not require the reader to adopt that theoretical vocabulary to accept the measurement result. The direct claim is narrower: within a \textit{CGEL}-informed feature space, English reciprocals occupy a stable interface position between pronouns and compound determinatives.
+I retain only columns with at least two positive entries across the fixed inventory. One column in the archived extract, the morphological identity column \texttt{each\_other}, has only one positive entry and is excluded by this rule. The resulting instrument has 154 features: 65 morphological, three phonological, 36 semantic, and 50 syntactic. The same filtered feature set is used for every target; the original extract remains unchanged.
 
-Two limitations constrain the analysis. First, all findings depend on a single hand-coded binary matrix. Agreement across analyses counts as internal robustness against method-specific artefacts, not independent convergence across datasets. Second, with $n = 2$, no procedure can make the target behave like a large population. The point is to locate the two forms responsibly in a calibrated space, report the specification surface, and make clear what would change the conclusion.
+The morphological block includes component identities, compounding, case, and paradigm properties. The semantic block includes person deixis, quantification, and reciprocal interpretation. The syntactic block records distributions and combinations with dependents. The three phonological columns concern initial sound sequences and a stress requirement in a specified construction. Table~\ref{tab:matrix} illustrates actual cells, with the full identifiers and block assignments available in the feature dictionary.
 
-
-\section{A Feature-Space Measurement Model for Grammatical Categories}
-
-To make diagnostic ambiguity measurable, I treat grammatical similarity as distance in a binary feature space. Each word form is represented as a point in a high-dimensional space whose axes are grammatical properties. The measurement question is not whether one diagnostic is decisive, but how the full property profile positions reciprocals relative to clear pronoun and compound-determinative anchors.
-
-\ifcjlsubmission
-The features come from earlier coding work on this dataset. I keep only the 155 that apply to more than one word form, which filters out idiosyncratic properties unique to individual items and leaves features that actually help compare categories. They span morphology (66), syntax (50), semantics (36), and phonology (3), so with binary coding every word form becomes a 155-bit vector.
-\else
-The features come from \textcite{reynolds2021}, who coded 232 binary features across 138 word forms. I keep only the 155 that apply to more than one word form, which filters out idiosyncratic properties unique to individual items and leaves features that actually help compare categories. They span morphology (66), syntax (50), semantics (36), and phonology (3), so with binary coding every word form becomes a 155-bit vector.
-\fi
-
-Again, the vowel analogy is useful. After a language's vowel space is mapped, any new token can be placed relative to the established categories. Here, the 155 features are the acoustic dimensions; canonical pronouns and compound determinatives are the reference categories; the 2D ordination is like an F1--F2 plot for visual orientation; and Jaccard distance stands in for perceptual distance.
-
-I use Jaccard because in sparse binary data, shared absences tell you almost nothing. Shared absence is cheap evidence: the fact that neither \mention{each other} nor \mention{the} can be plural does not reveal much about their relationship. What matters are shared presences and conflicts. Jaccard ignores the uninformative zeros and focuses on what counts. The MCA plot in Figure~\ref{fig:mca} is just for intuition; all the actual contrasts use full 155-dimensional distances.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{plots/mca_reciprocals.png}
-    \caption{Reciprocals in grammatical feature space visualized with Multiple Correspondence Analysis. Pronouns (cyan) and determinatives (red) form regions; the compound determinatives sit at the interface; \mention{each other} and \mention{one another} (triangles) fall in that same interface.}
-    \label{fig:mca}
-\end{figure}
-
-For comparison, I use two predeclared sets. First, canonical pronouns like \mention{he}, \mention{her}, and \mention{herself}. Second, the compound determinatives from \textcite[Ch. 5 \S9.6]{huddleston2002}, items like \mention{anybody} and \mention{everyone} that realize fused determiner--head functions \parencite{Payne2007}. If morphologically complex reciprocals pattern with anything, the likely comparators are these hybrids rather than simple pronouns.
-
-\begin{table}[!htbp]
-    \centering
-    \scriptsize
-    \setlength{\tabcolsep}{4pt}
-    \begin{tabular}{>{\raggedright\arraybackslash}p{0.16\textwidth} >{\raggedright\arraybackslash}p{0.19\textwidth} p{0.10\textwidth} p{0.12\textwidth} p{0.10\textwidth} p{0.13\textwidth}}
-        \toprule
-        Diagnostic & Illustration & Canonical pronouns & Compound determinatives & Reciprocals & Main pull \\
-        \midrule
-        Distinct case paradigm & \mention{he/him/his} & yes & no & no & determinative-ward \\
-        Compound morphology & \mention{somebody}, \mention{each other} & no & yes & yes & determinative-ward \\
-        Pronoun-like anaphoric NP substitution & standalone anaphoric NP use & yes & no & yes & pronoun-ward \\
-        Fused determiner--head use & \mention{somebody arrived} & no & yes & no & pronoun-ward \\
-        Reciprocal-style co-argument dependency & \mention{They liked each other} & no & no & yes & distinctive \\
-        Subject distribution & \mention{He arrived}, \mention{Somebody arrived} & yes & yes & no & distinctive \\
-        Reciprocal semantics & mutual interpretation & no & no & yes & distinctive \\
-        Distinct pronominal genitive paradigm vs. clitic genitive & \mention{his}, \mention{somebody's}, \mention{each other's} & yes & no & mixed & mixed \\
-        \bottomrule
-    \end{tabular}
-    \caption{Representative diagnostics encoded in the 155-property matrix. The full matrix contains many more items and finer distinctions; this subset shows the kinds of evidence that pull reciprocals toward pronouns, toward compound determinatives, or away from both.}
-    \label{tab:diagnostics}
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Item & Compound & Distinct accusative & Person & Reciprocal & Subject \\
+     & word & in paradigm & deixis & meaning & use \\
+\midrule
+\input{data/revision/results/example_table.tex}
+\end{tabular}
+\caption{An extract from the coded matrix. A 1 records that the source coding assigns the property to the item; a 0 records its absence. The paradigm column records whether the item's paradigm has a distinct accusative, so reflexive \mention{herself} receives 1. The cells reproduce the inherited coding judgements. The subject-position qualification is discussed in the text.}
+\label{tab:matrix}
 \end{table}
-
-Table~\ref{tab:diagnostics} gives a compact view of the kinds of evidence that feed the matrix. The quantitative sections do not replace these diagnostics; they aggregate them, check their joint stability, and show how much the overall boundary diagnosis depends on metric choice, feature family, and comparator choice.
-
-From here the pipeline is straightforward. I first locate the reciprocals in the feature space, then summarize their relative position with a single distance contrast:
-\[
-\Delta = \bar d(\text{reciprocals},\text{pronouns})
-       - \bar d(\text{reciprocals},\text{compound determinatives}).
-\]
-Positive values mean that reciprocals are closer to the compound determinatives than to the pronouns; negative values mean the reverse.
-
-The later sections then ask four separate questions about that contrast: whether the contrast is unusual under a constrained benchmark, how much it depends on numerical specifications, how much it depends on the chosen comparison groups, and what predictive blend best captures the reciprocals' position relative to clear anchors.
-
 \FloatBarrier
 
-\section{Benchmarking the Distance Contrast Against a Constrained Reference Distribution}
+The archive assigns 0 on subject use to both reciprocals, although \textcite{haas2007reciprocal} and \textcite{hurstNordlinger2011} report restricted embedded-subject uses of \mention{each other}, including \mention{They know what each other wants} in the latter source. Without a more specific constructional definition, the legacy value doesn't establish an unrestricted prohibition. The target-cell sensitivity in \S\ref{sec:coding} includes changing this value; both full-feature Jaccard contrasts remain positive.
 
-Before treating a positive \(\Delta\) as evidence of a determinative-ward pull, I need to know whether this feature matrix would often generate such a contrast even if the observed item--property pairings were scrambled. The benchmark should keep two basic facts intact: how many properties each word has and how many words each property applies to.
+The same column assigns 0 to dummy \mention{it} and dummy \mention{there}, and the interrogative-tag subject column assigns 0 to dummy \mention{it}. These values conflict with ordinary dummy-\mention{it} subject and tag use and with \textit{CGEL}'s account of dummy \mention{there} \citep[Ch.~5, \S10.1.1]{huddleston2002}. A post hoc check setting both dummy-\mention{it} cells to 1 leaves it the highest pronoun-control contrast in the primary and morphology-removed Jaccard analyses. \textcite[\S4]{reynolds2021} also reported dummy pronouns clustering with determinatives.
 
-Each word in the dataset has a certain number of properties (e.g., \mention{each other} has 23), and each property applies to a certain number of words (e.g., \texttt{inflects for case} applies to 75). These totals reflect real facts about English: pronouns tend to have case distinctions, most words are not gradable, and so on. Any benchmark that ignored those totals would be too weak to be informative.
+The \texttt{compound\_word} values for both reciprocals are consistent with \textit{CGEL}'s analysis of them as single grammatical words written as two orthographic words \citep[Ch.~5, \S10.1.2]{huddleston2002}. For \mention{each other}, \textcite[42]{haas2007reciprocal} treats fixed stress on \mention{other}, excluding independent focus on \mention{each}, as evidence of lexicalization. This evidence concerns the reciprocal's internal stress, distinct from the matrix's particle-stress column.
 
-The relevant comparison keeps those totals while randomizing which specific words have which specific properties. Repeating that operation gives a reference distribution for \(\Delta\) under a benchmark where the instrument's marginal structure is intact but the observed grammatical pattern is scrambled. If the observed determinative-ward contrast is near the centre of this distribution, the contrast is a routine by-product of the matrix's row and column totals. If the contrast is in the tail, the result is unusual relative to that constrained benchmark.
+Both reciprocals and 12 compounds have 1 in both \texttt{inflects\_for\_case} and \texttt{does\_not\_inflect}. \textit{CGEL} documents reciprocal genitives, and \textcite[48, n.~32]{haas2007reciprocal} describes the absence of person, number, and gender inflection. Those facts permit a narrower interpretation of the latter label, but its original definition can't be recovered. I retain the two codes and report their influence without assuming that interpretation.
 
-The quasiswap algorithm \parencite{miklos2004randomization} generates exactly this kind of controlled randomization. It rearranges the feature matrix through thousands of small swaps, always preserving how many features each word has and how many words have each feature. In practical terms, the reference distribution asks whether the reciprocals end up closer to the compound determinatives than to the pronouns by more than this matrix structure alone would ordinarily produce. It does not show whether reciprocals are \enquote{really} intermediate. It asks the narrower model-checking question: whether the determinative-ward component of the reciprocal profile is unusual under the constrained randomization.
+\texttt{has\_\allowbreak derivationtionally\_\allowbreak related\_\allowbreak words} records a judgement that the item has derivationally related forms; the archive gives no decision rule for that relation. \texttt{inflects\_for\_case} records case inflection, whereas \texttt{paradigm\_\allowbreak has\_\allowbreak distinct\_\allowbreak acc\_\allowbreak form} concerns the paradigm's distinct accusative form. All these archived cells are retained in the baseline.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.72\textwidth]{plots/permutation_null.png}
-  \caption{Constrained reference distribution for the observed \(\Delta\) contrast. The histogram shows \(\Delta\) values from 5,000 row- and column-preserving randomizations of the feature matrix, generated with the quasiswap algorithm; the dashed vertical line marks the observed value. The figure does not by itself establish boundary status. It shows that the observed determinative-ward contrast is unusual under this benchmark.}
-  \label{fig:perm_test}
+Coding polarity matters here. A 1 can represent a negative property, as in \texttt{does\_not\_inflect}. Reversing a column's labels can change a presence-based similarity measure. Shared zeros may carry grammatical information, too. Metric comparison and polarity perturbations make this dependence inspectable.
+
+\subsection{Explicit comparators}
+
+The primary comparison has two groups. The personal-pronoun group contains 41 coded forms or readings belonging to the core paradigms listed in \textit{CGEL} \citep[Ch.~5, \S10.1.1]{huddleston2002}: \mention{I}, \mention{we}, \mention{you}, \mention{he}, \mention{she}, \mention{it}, and \mention{they}. Case forms, reflexives, the recorded number distinctions, and dummy \mention{it} are included. Peripheral \mention{one} and \mention{there}, interrogatives, relatives, and temporal items remain outside this central comparison.
+
+The compound-determinative group contains all 16 central items in \textit{CGEL}'s list \citep[Ch.~5, \S9.6, example~41]{huddleston2002}: the combinations of \mention{every}, \mention{some}, \mention{any}, and \mention{no} with \mention{body}, \mention{one}, \mention{thing}, and \mention{where}. This includes separately written \mention{no one}. Compound status here follows the cited grammatical analysis. The marginal item \mention{somewhat} is excluded from this central list.
+
+For the locatives, \textit{CGEL} motivates its NP analysis through their object use. I include them in the primary group on the same basis as the other central compounds. A secondary analysis uses the 12 nonlocative compounds, making that restriction visible as a change in comparator scope. Both compound pools are narrower than the full determinative inventory, which also contains simple determinatives such as \mention{the} and \mention{some}.
+
+Both reciprocals are excluded from all anchor sets. Each control is removed from its own group when evaluated. A stricter check removes its whole family: all coded forms of the relevant personal-pronoun paradigm, or all four compounds sharing its determinative base. Singular and plural \mention{you} are held out together, as are singular and plural \mention{they}. The manifest lists every inclusion, exclusion, and family assignment.
+
+These families address an evident source of dependence, but they don't make the remaining anchors independent observations. Compound items also share nominal bases, and personal pronouns share inflectional and distributional properties across paradigms. The analysis describes this finite, structured inventory. Control recovery is an internal check against the designated groups, not an estimate of accuracy on an independently sampled lexicon.
+
+\section{Distances, controls, and reference distributions}
+\label{sec:methods}
+
+\subsection{The measured quantities}
+
+For binary profiles $x$ and $a$, let $n_{11}$ count shared presences, and let $n_{10}$ and $n_{01}$ count the two kinds of mismatch. Jaccard dissimilarity is
+\[
+ d_J(x,a)=\frac{n_{10}+n_{01}}{n_{11}+n_{10}+n_{01}}.
+\]
+The distance between two all-zero profiles is defined as zero. None of the evaluated observed profiles is all-zero, and the placement benchmarks preserve their positive counts. Jaccard is the primary measure for concreteness; its empirical adequacy is examined against the controls and alternative specifications.
+
+For a target $x$ and the declared personal-pronoun and compound-determinative pools $P_x$ and $C_x$, I compute
+\[
+ d_P(x)=\frac{1}{|P_x|}\sum_{a\in P_x}d(x,a),\qquad
+ d_C(x)=\frac{1}{|C_x|}\sum_{a\in C_x}d(x,a),\qquad
+ \Delta(x)=d_P(x)-d_C(x).
+\]
+The subscript indicates the item or family exclusion required for the control being evaluated. For either reciprocal, the full pools contain 41 and 16 items. Every mean weights the remaining forms equally. The two reciprocals are reported separately throughout.
+
+The primary quantities are the two mean distances and their contrast for this fixed inventory, conditional on the archived coding, comparator definitions, retained features, feature weights, and distance measure. They don't estimate a population parameter or latent category membership.
+
+A positive $\Delta$ means closer average proximity to the compound group. Zero means equal mean distances. Neither sign nor equality establishes category membership: an item could be nearly equally close to both groups or nearly equally remote. I report both distances and use the control distributions to contextualize their difference. Figure~\ref{fig:controls} plots these two measured summaries.
+
+For a control, the simplest recovery check asks whether its mean distance to its designated group is smaller. I also report the control contrast ranges and locate the reciprocals relative to them. No tolerance for a binary boundary diagnosis is estimated from the reciprocals themselves.
+
+\subsection{A fixed-anchor benchmark}
+
+The reference distribution asks what these summaries would look like if a target retained its number of coded presences but their feature positions were assigned at random. For each item and feature specification, I draw 20,000 binary profiles by selecting that many positive positions uniformly without replacement. The anchor profiles remain fixed. A simulated target is compared with exactly the same remaining anchors as its observed counterpart.
+
+Random placement preserves a target's feature count while breaking its particular associations with the anchors and changing the matrix's column totals. Its purpose is to show how far the observed proximity and directionality depart from random feature placement at the target's observed density. A second benchmark preserves the target's number of presences within each retained feature block.
+
+The blockwise benchmark addresses broad differences in morphological, semantic, syntactic, and phonological density. It still destroys dependencies within blocks and can produce linguistically incoherent combinations. A low distance under either benchmark records greater proximity to the encoded anchors than under that specified placement rule. It isn't a probability that the item belongs to a category, nor is it independent validation of the source coding.
+
+For each distance, I report the lower-tail summary $(1+L)/(B+1)$, where $L$ is the number of simulated distances no greater than the observed distance and $B=20{,}000$. The addition of one makes the simulation resolution explicit. For comparisons across dissimilarities, I report empirical midrank percentiles: the proportion below the observation plus half the proportion tied. Numerical ties use an absolute tolerance of $10^{-12}$. These percentiles have a common reference interpretation even when raw distance scales differ.
+
+Monte Carlo standard errors describe simulation error in these percentiles: they're the sample standard deviations of the below/tied scores (1, 0.5, or 0), divided by the square root of the number of draws. They don't measure uncertainty in the coding or in a population of words.
+
+A contrast at the median of its reference distribution is typical under that randomization. It need not be zero, since the fixed anchor groups can differ in their geometry and feature density. Conversely, equal distances need not yield a median percentile.
+
+\subsection{Primary specification and sensitivity checks}
+
+The alternative measures are Dice dissimilarity, $ (n_{10}+n_{01})/(2n_{11}+n_{10}+n_{01})$, and Hamming distance, the proportion of mismatched retained features. Hamming weights shared absences symmetrically with shared presences and is unchanged by reversing the polarity of any feature.
+
+For nonnegative feature weights $w_j$, weighted Jaccard is
+\[
+ d_w(x,a)=\frac{\sum_j w_j\lvert x_j-a_j\rvert}{\sum_j w_j\max(x_j,a_j)}.
+\]
+The inverse-frequency version assigns weight $\log\{N/\max(1,f_j)\}$, where $N$ and $f_j$ are the number of remaining anchors and their positive count for feature $j$. The implementation assigns zero distance when the weighted union is at most $10^{-12}$; this also covers profiles whose shared positive features all receive zero weight.
+
+The unweighted measures give each retained feature equal weight. This choice treats columns as the units of contribution and gives larger blocks more total feature weight; it isn't an independently justified weighting of grammatical diagnostics. I estimate the inverse-frequency weights from the anchors left in the particular fold and then fix them for the observed target and every randomized counterpart. The four dissimilarities share many assumptions and aren't treated as independent sources of evidence.
+
+Each measure is evaluated with all retained features and after removing each of the four feature blocks in turn. Every specification also evaluates the controls. The design crosses these choices with the full and nonlocative compound pools, item and family holdouts, and the two reference benchmarks. The resulting 9,440 rows are item-by-specification measurements, not 9,440 independent observations. Each target's random profiles are reused across measures and comparator choices within its feature specification and benchmark. The generator is NumPy PCG64 in the recorded environment, with seeds derived deterministically from the base seed, item, feature specification, and benchmark.
+
+The primary specification combines Jaccard, all 154 retained features, the full comparator pools, item holdout, and fixed-total placement. I recorded this specification and its sensitivity grid in a protocol before running the corrected analysis. The protocol was developed with knowledge of earlier exploratory results, so this isn't an independently preregistered confirmatory study.
+
+The source matrix, comparator manifest, feature-block map, random seed, software versions, and hashes are supplied so that the specific analysis can be reproduced. Distances, contrasts, and resampling ranges are displayed to two decimal places; full-precision values remain in the data files. Display precision describes the computation conditional on this matrix, not the accuracy of the grammatical coding.
+
+\section{Control recovery and reciprocal profiles}
+\label{sec:results}
+
+With all retained features and Jaccard distance, each of the 57 controls is nearer its designated comparison group. This remains true when whole families are held out. In the item-held-out analysis, the personal-pronoun contrasts range from $\RevPronDeltaMin$ to $\RevPronDeltaMax$ and the compound contrasts from $\RevCompDeltaMin$ to $\RevCompDeltaMax$. Dummy \mention{it} sets the upper pronoun endpoint at $-0.04$; the next-highest control, \mention{itself}, is at $-0.13$. The ranges are separated, but their endpoints don't define a universal decision boundary.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.88\textwidth]{data/revision/results/figures/control_distances.pdf}
+\caption{Mean Jaccard distances with all 154 retained features. Each control is excluded from its own comparison pool; both reciprocals are always excluded from the anchors. The dashed line marks equal mean distances. Points below it are closer to the compound group. The reciprocals have different two-distance profiles from the controls, while both remain somewhat closer to the compound group.}
+\label{fig:controls}
 \end{figure}
 
-The results are shown in Figure~\ref{fig:perm_test}. For my primary comparison, using carefully matched sets of six pronouns and six compound determinatives, the observed contrast falls in the extreme positive tail of this reference distribution (tail-area summary \(= 0.003\), Monte Carlo SE \(\approx 0.001\)).
+The reciprocals fall between those control contrast ranges. For \mention{each other}, the mean distances are $\RevEachDP$ to personal pronouns and $\RevEachDC$ to compounds, giving $\Delta=\RevEachDelta$. For \mention{one another}, they're $\RevOneDP$ and $\RevOneDC$, giving $\Delta=\RevOneDelta$. The positive contrasts are much smaller than those of the compound controls. They're also distinct from the negative contrasts of the personal-pronoun controls.
 
-I use this tail area as a model-checking summary, not as a classical test of a sharp null hypothesis. The reference model is intentionally artificial: it asks what \(\Delta\) values are typical when the instrument's row and column totals are preserved but the item--feature associations are otherwise scrambled. Under that benchmark, contrasts this determinative-ward are rare. That suggests the observed \(\Delta\) is not merely an artifact of how common or rare the coded features happen to be in English.
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Item & $d_P$ & $d_C$ & $\Delta$ & \shortstack{Reference percentile\\of $\Delta$} \\
+\midrule
+\input{data/revision/results/primary_table.tex}
+\end{tabular}
+\caption{Primary Jaccard results for two named controls and both reciprocals. Contrasts are calculated before rounding. Percentiles refer to target-only randomization conditional on each item's number of presences. They describe location in an artificial reference distribution, not probability of category membership.}
+\label{tab:primary}
+\end{table}
+\FloatBarrier
 
-Two caveats apply. First, with only two reciprocals, no single contrast should carry much interpretive weight on its own. Second, my choice of which six pronouns and six determinatives to compare matters. Different selections might yield different results, a sensitivity I explore in section~\ref{sec:rotations}. For that reason, I treat the reference-distribution result as one model check on the determinative-ward contrast rather than as a decisive test of boundary status.\footnote{Implementation in \texttt{03\_matched\_set\_robustness.R}; reference draws saved as CSV/RDS for reproducibility.}
+The two distances distinguish the reciprocals from the controls (Figure~\ref{fig:controls}). Each reciprocal is nearer the personal-pronoun group than any compound control is, and nearer the compound group than any personal-pronoun control is. Each is also farther from either group than every member of that group except dummy \mention{it}. This comparison uses item-held-out controls.
 
+Under the primary Jaccard fixed-count benchmark, none of either reciprocal's 20,000 random profiles is as close to either anchor group as the observed profile. The smoothed lower-tail summary is $1/20{,}001$ for each distance. The within-block benchmark gives the same zero-hit result for Jaccard.
 
-\section{Metric and Feature-Block Sensitivity}
+With zero lower-tail hits in $B$ independent draws, an exact one-sided 95\% upper bound on the placement probability is $1-0.05^{1/B}$, about $\FollowZeroHitUpper$ here. The bound concerns Monte Carlo uncertainty under the benchmark, not grammatical uncertainty.
 
-The reference-distribution check fixes one set of analysis choices: Jaccard as the primary distance, a specific set of reference items, and \(\Delta\) as the contrast of interest. Each choice is a fork in the path and an opportunity for bias to accumulate. The next question is whether the basic interface reading survives when reasonable alternatives are allowed.
+The controls show how readily coded items satisfy this benchmark. Under primary Jaccard fixed-total placement, 35 of 41 personal pronouns and 15 of 16 compounds have lower-tail summaries below 0.05 for their distance to the non-designated group. Five controls have zero hits for that distance, including \mention{everyone} against personal pronouns. Proximity relative to random placement is thus common among the controls and doesn't distinguish the reciprocals.
 
-Specification-curve analysis \parencite{simonsohn2020specification} addresses this directly. Instead of defending a single pipeline, I run many plausible pipelines and show all results. Here, I vary the distance metric (Jaccard, Dice, Hamming, and an IDF-weighted Jaccard), the feature set (all features, or blockwise ablations such as \enquote{no morphology} and \enquote{no syntax}), and the weighting method. The goal is not to find the \enquote{best} specification or crown a winning pipeline, but to see whether the sign and size of \(\Delta\) are stable across reasonable ones.
-
-In the implementation, \(\alpha\) parameterizes this regularization choice; Figure~\ref{fig:spec_curve} shows it as the contrast between ridge and elastic-net weighting. The ridge method keeps all features in play with different weights, whereas elastic-net weighting allows the algorithm to drop weakly informative features altogether. Each combination yields a value of the same \(\Delta\), so the curve shows whether the contrast changes sign or merely changes size.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{plots/spec_curve.png}
-    \caption{Specification curve for $\Delta$. Each point shows the observed contrast under different combinations of weighting method (shape), distance metric (colour), and feature block exclusion (panels). Positive values indicate closer placement to compound determinatives; negative values indicate closer placement to pronouns; zero marks the boundary.}
-    \label{fig:spec_curve}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{data/revision/results/figures/target_references.pdf}
+\caption{Fixed-anchor reference distributions under Jaccard distance. Each row concerns one reciprocal; the columns show distance to personal pronouns, distance to compound determinatives, and their difference. Vertical lines mark observed values. Randomization preserves the target's total number of presences. Both target distances are below all simulated counterparts. The controls commonly show low distances to their non-designated group under this benchmark as well.}
+\label{fig:references}
 \end{figure}
+\FloatBarrier
 
-Figure~\ref{fig:spec_curve} shows two clear patterns. First, the sign of \(\Delta\) is stable across distance metrics and weighting methods: most specifications land on the same side of zero. Second, only one block flips the sign. When morphology is \emph{excluded} (panel \enquote{morph}), \(\Delta<0\) and the reciprocals look more pronoun-like.
+The contrast itself lies at approximately the 90th reference percentile for \mention{each other} and the 93rd for \mention{one another}. Their Monte Carlo standard errors are $\FollowEachMCSE$ and $\FollowOneMCSE$ on the 0--1 scale. The supplement supplies exact counts, ties, and full-precision values. These percentiles describe direction relative to random placement.
 
-With all features included (panel \enquote{none}) \(\Delta>0\), and removing semantics pushes \(\Delta\) further positive (more determinative-like). Removing syntax or phonology leaves small, positive contrasts near the baseline. This pattern suggests that morphological features carry most of the determinative-ward signal, whereas semantic features contribute a pronoun-ward pull; syntax and phonology are comparatively weak in this contrast.
+All-feature Dice and inverse-frequency-weighted Jaccard analyses also recover every control under both holdout schemes. Hamming recovers 56 of the 57 controls: dummy \mention{it} has a small positive contrast, about $0.01$ with either holdout scheme. Under each of the four all-feature measures, both reciprocals have contrasts between the two observed control ranges, with either holdout scheme.
 
-This invariance has theoretical significance. The specification curve does not settle category theory on its own, but it does test whether the observed interface position is robust across reasonable metrics and ablations. $\Delta$ may shift in magnitude across specifications, but its sign, indicating which side of the pronoun/compound-determinative interface reciprocals favour, remains stable across most of them. Within this measurement model, this marks stable boundary position rather than a metric artifact.
+Across all 80 observed specifications and the four equal-block-total settings in \S\ref{sec:blockweight}, every control failure is dummy \mention{it}. Every other eligible control is nearer its designated group throughout. Dummy \mention{it} also sets the upper pronoun-contrast endpoint in every setting. The supplement reports all control margins and target placements, including specifications in which a target lies inside that extended range.
 
-The specification curve leaves design sensitivity from the particular 6+6 matched sets used in the reference-distribution contrast; section~\ref{sec:rotations} investigates that separately by rotating the matched sets.
+Recovery provides an internal check on one coded inventory; agreement between coding and group designation remains partly theory-dependent.
 
-\section{Comparator-Set Sensitivity}
-\label{sec:rotations}
+\section{Sensitivity to changes in the instrument}
+\label{sec:sensitivity}
 
-The specification curve addresses numerical tuning choices, but it keeps the comparator set fixed. The comparison-group question is different: how much depends on which anchor items I compare the reciprocals to? I had chosen specific pronouns and determinatives for comparison based on theoretical considerations, but different choices may yield different contrasts. To assess that design sensitivity, I repeated the analysis 100 times, each time randomly selecting six pronouns and six compound determinatives from the eligible pools while holding all other steps fixed.
+\subsection{Metrics and feature blocks}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/matched_subset_robustness.png}
-    \caption{Sensitivity of $\Delta$ to the choice of comparison groups. The histogram shows the observed $\Delta$ values across 100 rotations of six pronoun and six compound determinative anchors. The dashed line marks the prespecified comparison set, the solid line marks the rotation median, and the dotted lines mark the interquartile range. Most rotations remain determinative-ward, but the magnitude varies substantially with the comparator set.}
-    \label{fig:rotations}
+With all features included, each reciprocal favours the compound group under all four dissimilarities. The corresponding fixed-count reference percentiles range from about 0.75 to 0.96 across the two targets and four measures. These values make the directionality comparable to each measure's own benchmark. They don't imply that the raw differences have the same magnitude or that the measures define the same geometry.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{data/revision/review_corrections/specification_percentiles.pdf}
+\caption{Reference percentiles of the reciprocal contrasts under four dissimilarities and five feature specifications, using the full comparator pools, item holdout, and fixed-total placement. IDF-weighted Jaccard uses inverse-frequency weights estimated from the remaining anchors, distinct from the equal-block-total weighting in \S\ref{sec:blockweight}. The dashed line marks the median reference contrast, not necessarily a raw contrast of zero. Removing morphology moves the contrasts toward the lower tail; removing semantics moves them toward the upper tail. The complete output also reports the raw contrasts and control results for each specification.}
+\label{fig:specifications}
 \end{figure}
+\FloatBarrier
 
-Figure~\ref{fig:rotations} shows wide variation across rotations.\footnote{Implementation: \path{03\_matched\_set\_robustness.R}; the specific canonical items are listed in \path{matched_subset_manifest.txt}.} The prespecified set yields \(\Delta = 0.079\); across rotations the median contrast is \(0.023\), with an interquartile range from \(0.002\) to \(0.043\). Three quarters of the rotations remain determinative-ward, but the effect is often much smaller than in the prespecified comparison.
+After singleton filtering, the targets differ only in four morphological component columns: \texttt{a}, \texttt{another}, \texttt{each}, and \texttt{one}. Their 89 non-morphological entries are identical, so identical observed results after removing morphology follow from the coding. They aren't independent confirmations of a non-morphological pattern.
 
-With such small $n$, tail-area summaries are especially vulnerable to Type~S (sign) and Type~M (magnitude) errors \parencite{gelman2014types}, so the more informative summary is the distribution of $\Delta$ itself rather than a tail area attached to one matched set. The substantive point is that $\Delta$ is design-sensitive to the choice of comparators: the prespecified set sits high in the rotation distribution, but many equally reasonable comparator sets yield weaker contrasts.
+Removing morphology changes the result substantially. Both reciprocals then favour personal pronouns under every measure. With full pools and Jaccard, both contrasts are $-0.08$, just below dummy \mention{it}'s $-0.07$. The next-highest pronoun contrast is $-0.17$ with item holdout and $-0.16$ with family holdout. Inclusion within the pronoun range depends on one control beside the targets; it doesn't place them among the other pronoun controls.
 
-Accordingly, I focus on the effect itself, the distance contrast \(\Delta\), and on how \(\Delta\) varies across rotations, using the rotations as a descriptive multiverse \parencite{steegen2016increasing} that quantifies uncertainty due to researcher degrees of freedom rather than as a filter for statistical significance.
+The full-pool, morphology-removed comparison places the targets inside that extended range under Jaccard, inverse-frequency-weighted Jaccard, and Hamming. Under Dice they remain just above it. With the nonlocative compound pool, Jaccard, Dice, and Hamming also leave them between the control ranges under either holdout. The switch between within-range and between-range placement is sensitive to the endpoint and comparator scope.
 
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Feature specification & Features & \shortstack{$\Delta$:\\\mention{each other}} & \shortstack{$\Delta$:\\\mention{one another}} & \shortstack{Controls\\recovered} \\
+\midrule
+\input{data/revision/results/ablation_table.tex}
+\end{tabular}
+\caption{Jaccard contrasts and item-held-out control recovery for the full comparator groups. Removing morphology reverses the reciprocal contrasts even though all controls retain their designated nearer group. Control recovery alone can't guarantee the stability of the target interpretation.}
+\label{tab:ablations}
+\end{table}
 
+Removing semantics instead increases the compound preference: the Jaccard contrasts become about $0.17$ for both targets. Removing syntax or phonology makes smaller changes under equal feature weights. Without syntax, family-held-out Jaccard recovers 56 of 57 controls. Hamming under that same feature and holdout setting places \mention{each other} inside the pronoun range because the misrecovered dummy \mention{it} lies just above it. These exceptions likewise concern a single control endpoint.
 
-\section{Predictive Calibration of Boundary Position}
+Comparing these ablations shows how the blocks affect relative proximity. Morphological features favour the compound group; semantic features favour personal pronouns. An ablation changes both the available features and, for Jaccard, the union denominator. Its effect combines changed coded content with changed normalization.
 
-The distance analyses ask which anchor set is nearer, but they do not give an intuitive scale for where the reciprocals sit between the two anchor profiles. To build that scale, I use a simple predictive blend model: a one-number summary asking what mix of pronoun-like and compound-determinative feature probabilities best predicts each reciprocal's observed profile.
+A post hoc decomposition of morphology identifies the influential codes. Deleting all 49 component-identity columns leaves both Jaccard contrasts at $0.06$. Deleting just \texttt{compound\_word}, \texttt{does\_not\_inflect}, and \texttt{has\_\allowbreak derivationtionally\_\allowbreak related\_\allowbreak words} reverses them to $-0.03$ and $-0.02$. All 16 compounds and both targets have 1 in these columns, compared with 9, 1, and 12 personal pronouns, respectively. The compound preference depends on these whole-word coding judgements, including the unresolved inflection label.
 
-The two category profiles are estimated from the anchor items with the reciprocals held out; the exercise asks how much of each profile best predicts a reciprocal's observed properties.\footnote{Concretely, the category profiles are fit on conservative clear-anchor sets. For each feature, the pronoun and compound-determinative anchor sets provide smoothed Bernoulli rates. For a given weight $w$, the blend probability is $w p_{\text{pron}} + (1-w) p_{\text{det}}$, and the predictive score for a reciprocal's 155-bit feature vector is its log loss under that blended profile. $\hat w$ is the minimizer. Implementation in \path{04\_weight\_calibration.R}.}
+Deleting the remaining 13 morphological columns leaves contrasts of $0.00$ and $0.01$. That set includes case, paradigm, word-formation, and monomorphemicity codes. The supplement lists the exact deletion sets. These coordinated deletions are deterministic checks of the existing matrix, identified after review, and their effects aren't additive contributions.
 
-The model implements this idea with a mixture weight $w$ that ranges from 0 to 1. When $w = 1$, it predicts features from the pronoun profile; when $w = 0$, from the determinative profile. For values in between, it mixes the two patterns. A value of $w = 0.7$, for instance, is 70\% pronoun-like and 30\% determinative-like. Read $w$ as a predictive index of boundary position, not as a literal claim about composition.
+\subsection{Comparator composition}
 
-I then asked what mixture weight would make the model best match the reciprocals' observed feature patterns under the same scoring rule. In other words, if reciprocals are intermediate between the two anchor profiles, what blend best predicts their properties?
+Restricting the compound group to its 12 nonlocative members increases the all-feature Jaccard contrasts to $0.07$ and $0.08$. All 53 eligible controls are recovered by Jaccard under both holdout schemes, and both targets remain between the control contrast ranges. The four locative compounds are retained as probes in the output but aren't counted as controls of a group from which this specification excludes them.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.8\textwidth]{plots/weight_calibration.png}
-    \caption{Predictive blending of pronoun and compound determinative profiles. Curves show predictive fit as the mixture weight $w$ varies; dashed lines mark the best-fitting weights for each reciprocal. Both minima lie near parity, with $\hat w=0.504$ for \mention{each other} and $\hat w=0.451$ for \mention{one another}.}
-    \label{fig:weight_cal}
-\end{figure}
+I also describe comparator-composition sensitivity through 2,000 family resamples. Each draw samples the seven personal-pronoun families and four compound-base families with replacement at their original numbers, retaining every form in a sampled family, with multiplicity. All other choices are fixed at the full-feature Jaccard analysis. This changes the weighting of families and forms within the fixed inventory.
 
-Figure~\ref{fig:weight_cal} reveals the same interface from another angle. To match the properties of \mention{each other}, the best blend is about 0.50 pronoun-like; for \mention{one another}, about 0.45 pronoun-like.
+The central 95\% of resampled contrasts spans $0.01$--$0.07$ for \mention{each other} and $0.01$--$0.08$ for \mention{one another}. These are descriptive resampling ranges for this finite inventory and grouping scheme, not population confidence intervals. They show appreciable variation in magnitude. A few resamples reverse the sign~-- 8 of 2,000 for \mention{each other} and 2 of 2,000 for \mention{one another}~-- although both central 95\% ranges remain positive.
 
-This provides another check on the same phenomenon. Whether the analysis visualizes grammatical space, measures distances, compares the observed contrast to a constrained reference distribution, or calibrates this simple blend, reciprocals consistently appear at the interface rather than clustering near either anchor profile.
+\subsection{Coding dependence}
+\label{sec:coding}
 
-Two caveats apply. First, reciprocals are not literally probability mixtures of two kinds; the model provides an interpretable, one-number summary of where they sit relative to the anchor profiles. Second, the blend is estimated on the same measurement instrument as the other analyses, so the blend is another internal check rather than an independent source of evidence.
+Single-feature influence is examined in three ways: deleting each retained feature in turn, reversing its polarity for all items, and flipping its value for the target alone. Each intervention is applied separately, with the original comparator memberships retained. Table~\ref{tab:coding} reports the resulting Jaccard ranges. These are mechanical stress tests. They don't assert that every tested reversal or cell change is a linguistically plausible correction.
 
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lrr}
+\toprule
+Intervention & $\Delta$: \mention{each other} & $\Delta$: \mention{one another} \\
+\midrule
+\input{data/revision/results/coding_table.tex}
+\end{tabular}
+\caption{Ranges of the full-pool Jaccard contrast across separate perturbations of each of the 154 retained features. The table concerns one change at a time, not simultaneous or systematic recoding.}
+\label{tab:coding}
+\end{table}
+\FloatBarrier
 
-\section{Anchor Calibration and Predictive Checks}
+None of these single changes reverses the positive Jaccard contrast. Individual features nonetheless have visible influence. Deleting \texttt{does\_not\_inflect} produces the smallest contrasts, whereas deleting \texttt{pro\_form} produces the largest. The full influence table reports every intervention.
 
-Throughout these analyses, I've treated the feature matrix as a measurement model. The next issue is whether the measurements themselves are problematic. The first question is not whether the richest model fits, but whether the workflow earns trust step by step by distinguishing clear anchors and preserving basic structure before interpreting a case with unresolved placement. Before asking the instrument to place the reciprocals, I need to know whether it can recover the easy cases.
+Several related coding judgements can be systematically wrong together, and the block ablations already show that a coordinated change can reverse the result. Independent recoding would test reliability in a way that these perturbations can't. The perturbation results identify where recoding is most likely to affect these particular summaries.
 
-The checks reported here start one step later. I fit a simple model that predicts each binary feature from the item's category label with modest adjustment terms and weak regularization, then draw replicated datasets from the fitted model.\footnote{Concretely, for feature $j$ on item $i$, $y_{ij}\sim\mathrm{Bernoulli}(\pi_{ij})$ with $\mathrm{logit}\,\pi_{ij}=\alpha_j+\beta_j\mathbf{1}\{c_i=\text{pronoun}\}$ and ridge regularization on $\beta_j$; draws are parametric bootstrap replicates (posterior draws if a Bayesian fit is used). Reciprocals are held out wherever predictions for them are reported.} That staged buildup matters because a complicated fit can look plausible while still hiding an implementation error.
+\subsection{Equal total feature weight per block}
+\label{sec:blockweight}
 
-I ask two related questions: whether replicated datasets preserve the large-scale arrangement under the same ordination, and whether they preserve nearest-neighbour relations around anchors.
+Equal total feature weight per block provides an exploratory check on the effect of block size. The weights are $w_j=1/p_b$, where $p_b$ is the number of retained features in feature $j$'s block. This uses the weighted-Jaccard ratio above, not an average of block-specific distances; blocks need not contribute equally to a particular pair's union denominator. The check was selected after review, and its dated protocol fixed the weights before calculation.
 
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}[b]{0.46\textwidth}
-        \includegraphics[width=\textwidth]{plots/ppc_procrustes_hist.png}
-        \caption{Predictive check for global structure. Histogram: distribution of the Procrustes statistic under replicated datasets; vertical line: observed statistic.}
-        \label{fig:ppc_procrustes}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.46\textwidth}
-        \includegraphics[width=\textwidth]{plots/ppc_knn_diff_hist.png}
-        \caption{Predictive check for local structure. Histogram: distribution of $k$-NN overlap around anchors ($k$ fixed across runs); vertical line: observed overlap.}
-        \label{fig:ppc_knn}
-    \end{subfigure}
-    \caption{Predictive checks. (a) Global structure: distribution of Procrustes fit statistics across replicated datasets (histogram) with the observed statistic marked (vertical line). (b) Local structure: distribution of nearest-neighbour overlaps under replication, with the observed overlap marked.}
-\end{figure}
+The comparison uses the full pools and both holdouts, with all features or morphology removed. A post hoc phonology exclusion then identifies the source of the weighting effect. These deterministic checks generate no randomized profiles. With all features, the weighted mean distances are $\FollowEachDP$ to personal pronouns and $\FollowEachDC$ to compounds for \mention{each other}; for \mention{one another}, they're $\FollowOneDP$ and $\FollowOneDC$. Both contrasts remain positive and between the control ranges (Table~\ref{tab:blockweight}).
 
-%different colour may be more visible
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}
+\toprule
+Features & Weighting & \shortstack{$\Delta$:\\\mention{each other}} & \shortstack{$\Delta$:\\\mention{one another}} & \shortstack{Controls:\\item} & \shortstack{Controls:\\family} \\
+\midrule
+\input{data/revision/followup/block_weight_table.tex}
+\end{tabular}
+\caption{Jaccard comparisons under equal feature weights and equal total feature weight per block, using the full pools. Target values are identical across holdout schemes because both targets are excluded from every pool; control recovery is shown separately. The supplement includes both absolute distances and every control margin. Contrasts are calculated before rounding.}
+\label{tab:blockweight}
+\end{table}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{plots/calibration.png}
-    \caption{Reliability diagram under cross-validation, following \textcite{niculescu2005predicting}. Predicted probabilities (x-axis) track observed frequencies (y-axis), showing approximate calibration: when the model predicts 70\% probability for the pronoun label, about 70\% of held-out items are pronouns.}
-    \label{fig:calibration}
-\end{figure}
+Removing morphology under equal block totals leaves both contrasts at about $0.02$. Their values don't change across holdout schemes, because both targets use the same full comparator pools. The reweighted comparison recovers 56 of 57 controls in all four settings; dummy \mention{it} is the exception.
 
-The model passes these basic predictive checks (Figures~\ref{fig:ppc_procrustes}, \ref{fig:ppc_knn}, and~\ref{fig:calibration}). Replicates maintain reasonable global geometry and preserve about 65.5\% of local neighbourhood structure around anchors. The reliability diagram shows that when the classifier assigns, say, 70\% probability to the pronoun label, the realized frequency on held-out items is near that level, so probabilities are roughly calibrated rather than systematically over- or under-confident.\footnote{For the reciprocals, the classifier assigns near-chance pronoun probabilities (0.485 for \mention{each other}, 0.467 for \mention{one another}); masked predictive log-likelihood is identical under either labelling ($-54.240$), and per-item cross-entropy is $0.371$ versus a chance baseline $\ln 2 \approx 0.693$.}
+Dummy \mention{it}'s contrast lies below the unchanged target contrasts with item holdout but above them with family holdout. The endpoint crosses the targets; their within-range placement under family holdout doesn't put them among the other pronoun controls. Setting dummy \mention{it}'s two subject-use cells to 1 also changes item-holdout placement to within-range in this weighted ablation, while leaving the equal-feature placement descriptions unchanged.
 
-Perfect reproduction is neither expected nor desired. What matters is that the measurement model carries real signal about categorical structure: clear pronouns and clear compound determinatives are distinguishable under the same machinery, which makes the reciprocals' unresolved placement informative rather than an artefact of a broken instrument.
+Equal block totals assign each phonological column about 17 times the weight of a syntactic column and 12 times that of a semantic one. The particle-stress and \mention{th}-initial columns have 27 and 10 positive personal-pronoun entries, respectively, but none among compounds or targets. The third phonological column is zero for all anchors and targets. For these profiles, positive phonological mismatches can only increase the targets' Jaccard distance to the pronouns.
 
+\begin{samepage}
+The post hoc diagnostic shows that this concentration of weight produces the positive contrasts. With morphology and phonology both removed, equal totals for semantics and syntax give $\Delta=-0.11$ for both reciprocals. With only phonology removed, equal block totals give $-0.02$ and $-0.01$. All 57 controls are recovered under both holdouts in both checks. Balancing the two large non-morphological blocks strengthens the pronoun preference; the positive block-total result depends on heavily weighting two phonological columns.\par
+\end{samepage}
 
+Equal block totals also retain redundancy. For example, \texttt{where} and \texttt{locative} are identical columns across the inventory despite belonging to different blocks. The supplement supplies the complete grid and both sets of weighting checks. Equal block totals preserve this redundancy as well as the inherited coding judgements.
 
-\section{Stable Ambiguity as a Measurement Result}
+\section{Interpretation and limits}
+\label{sec:discussion}
 
-The workflow distinguishes arbitrary diagnostic conflict from stable boundary placement under a specified measurement model. If the reciprocals occupy a stable boundary position, their placement should survive reasonable changes in metric and feature set, different feature blocks should pull in different directions, clear anchors should remain recoverable, and a predictive blend should place the reciprocals near parity. The observed pattern has this form: the sign of the distance contrast is stable across metrics and penalties and is only modest in magnitude, while reference-distribution extremity is design-sensitive even though the qualitative boundary diagnosis persists across rotations.
+Under primary Jaccard, each reciprocal is nearer each comparison group than any of the other group's controls is, but farther from it than its own controls, apart from dummy \mention{it}. Both contrasts lie between the group ranges. This observed comparison supports a conditional description of their intermediate profiles. Absolute proximity relative to randomized feature placement adds little discrimination: most controls also satisfy that benchmark against their non-designated group.
 
-The blockwise results supply the expected cross-dimensional tension: morphology contributes most of the determinative-ward pull while semantics contributes a pronoun-ward pull, with syntax and phonology comparatively weak in this contrast. The instrument also separates anchors and yields calibrated supervised probabilities for them. The predictive blend places both reciprocals near parity, and the prespecified anchor contrast sits in the extreme tail of the row- and column-preserving reference distribution even though its extremity is design-sensitive across rotations.
+The modest compound preference retains its sign across the tested all-feature measures, comparator restrictions, and individual perturbations. Deleting three whole-word morphological codes together reverses the sign; deleting component identities strengthens the preference. Removing morphology reverses it. Equal block totals offset that reversal through the phonological block; balancing semantics and syntax alone strengthens it. The retained claim depends on these coding and weighting choices.
 
-This pattern is the measurement result. The reciprocals exhibit stable interface placement with cross-dimensional tension rather than decisive recategorization or a failure of measurement. Within this instrument, no cutoff, classifier, or blend model can make morphology and semantics agree when they do not; changing the conclusion would require different measurements or external evidence, not a different threshold.
+Relative placement in this comparison leaves category membership open. \textit{CGEL}'s pronoun analysis remains a grammatical analysis to evaluate through distributional arguments; the measurements make the competing similarities and their dependence on feature choice explicit.
 
-More generally, boundary items should be expected to show stable interface placement under reasonable analytic choices. Single diagnostics or cherry-picked features force binary decisions; comprehensive profiles, prespecified analyses, and summaries that propagate design uncertainty instead map the topology of grammatical space, including its interfaces, and make clear which parts are robust within the chosen measurement model.
+\textcite{haas2007reciprocal} argues that \mention{each other} underwent both lexicalization and grammaticalization. His evidence for consolidation includes unit behaviour after prepositions, restricted internal inflection and stress, and weakened quantification by \mention{each}. He also traces expansion into new syntactic contexts. These processes help explain why the expression's parts differ from their independent counterparts; assigning the whole to a synchronic category requires further distributional argument.
 
+\textcite{hurstNordlinger2011} elicited descriptions of reciprocal-event videos from nine Australian English speakers, then collected judgments of prompted \mention{each other} descriptions. Construction choices and judgments varied across situations, predicates, and speakers. The authors note that the task may encourage unusually precise descriptions. This contextual variation gives concrete content to behaviour compressed by a binary profile; relating it to the distance comparison requires predictions linking particular diagnostics to those differences.
 
-\section{Discussion}
+For a property-cluster interpretation, the further question is projectibility: what observing some properties warrants predicting about others \citep{Goodman1955}. Reanalysing the same complete profiles under alternative distances tests sensitivity within the instrument. It doesn't by itself demonstrate prediction of unmeasured properties. A stronger claim would require specified held-out diagnostics, constructions, or observations, with criteria for success and failure established independently of the desired categorization.
 
-The quantitative contribution is a way to measure grammatical category edges when the target inventory is too small for ordinary large-sample classification. The paper combines a theory-informed feature space, explicit distance contrasts, constrained reference distributions, specification curves, comparator-set rotations, predictive blending, and anchor recovery into one workflow. The workflow asks whether a boundary diagnosis remains visible when the measurement choices most likely to move it are made explicit, rather than accumulating independent evidence from separate datasets.
+Measurement uncertainty leaves several explanations open. The current profiles may reflect distributional differences, imperfect coding, selective feature coverage, or some combination. The analysis neither demonstrates inherent gradience nor establishes that an underlying discrete category boundary is hidden by inadequate resolution. It identifies which comparative statements the available representation supports and which depend on retaining a particular block of properties.
 
-For English reciprocals, the answer is positive but carefully bounded. Across analyses that make different invariance assumptions while interrogating the same measurements, reciprocals sit at the edge of the pronoun region in ordinations, show mixed nearest neighbours, attract near-chance supervised probabilities with tied predictive fit (0.485, 0.467; log-likelihood $-54.240$ under either labelling), and display a blockwise split in which morphology leans determinative-ward,\footnote{This likely reflects pronouns' tendency to inflect for case, which reciprocals resist.} semantics leans pronoun-ward, and syntax and phonology contribute relatively little.
+The evidence comes from one coder and one theory-informed inventory. Binary coding compresses variation across constructions and speakers. Features are correlated and unevenly distributed across blocks. Family holdout reduces one kind of similarity between training comparators and controls, but leaves other dependencies. Reference randomization supplies a controlled artificial comparison, not a model of grammatical acquisition, processing, or diachrony.
 
-For a quantitative analysis of boundary placement, the relevant success criterion is not decisive recategorization but stable diagnostic uncertainty accompanied by cross-dimensional conflict. Reciprocals exhibit that profile here.
+These results suggest reporting practices for other studies: define the objects and comparators, evaluate controls, report both absolute and relative proximity, and specify what the benchmark preserves. Control failure calls the comparison into question. Targets remote from both observed groups give little reason for an intermediate interpretation. Report dependence on atypical range endpoints and identify the features responsible for weighting reversals. The empirical conclusions here concern English and this coded inventory; applying these practices elsewhere would require new comparisons.
 
-The mixture calibration supports that reading: it reproduces decisive separation for anchors while placing reciprocals at the boundary with near-parity placement, consistent with the ordination, distance, reference-distribution, and supervised results. Because all analyses interrogate the same measurements, agreement is internal robustness rather than independent convergence.
+Table~\ref{tab:uncertainty} distinguishes sources of variation that the analyses address. Mechanical perturbations and family resampling describe changes to the instrument or comparison; they don't estimate the probability of coding errors or uncertainty over an independently sampled lexicon.
 
-The blockwise pattern is compatible with a cautious property-cluster interpretation, but the measurements do not explain the grammatical source of each pull. The relevant point for this paper is narrower: different parts of the feature profile pull in different directions under the same measurement instrument. For reciprocals, morphology carries the main determinative-ward signal, while semantics carries a pronoun-ward signal. The measurements do not show why those pressures arise. They show stable cross-dimensional tension. The paper's direct claim remains measurement-level: in this \textit{CGEL}-informed feature space, reciprocals occupy a stable position at the pronoun/compound-determinative interface.
-
-What the instrument reveals is proximity to that interface: near-chance classifier probabilities, near-parity mixture weights, and cross-dimensional tension. The situation is analogous to a microscope at its resolution limit. The instrument localizes an interface zone even when it does not decide every theoretical question about category membership, and the 155-feature matrix has an analogous resolution floor within which the reciprocals fall. That uncertainty is epistemic rather than a claim that the categories themselves are vague or graded.
-
-This interpretation also clarifies what the results do not show. The analyses do not accumulate independent evidential weight; all procedures reuse the same hand-coded matrix. Agreement across analyses counts as internal robustness against method-specific artifacts rather than as independent convergence, and the numbers do not by themselves license recategorization. On the predeclared matched set the observed contrast sits far into the positive tail of the row- and column-preserving reference distribution (tail-area summary \(= 0.003\)), but across rotated comparison sets the effect size varies substantially. In a measurement-first reading, that combination of modest directionality, design sensitivity, and stable qualitative diagnosis is what an interface position should look like given a target population of only two types.
-
-The fusion-of-functions architecture provides a complementary grammatical backdrop \parencite{Payne2007}. If category and function are distinct primitives and fused determiner--head structures are grammatically real, then these morphologically complex items can be determinatives by category while serving fused determiner--heads in NP. That architecture predicts pressure toward categorical edges when category, function, and internal composition point in partly different directions. The measurements above are consistent with such pressure for the reciprocals: they behave pronoun-like on some feature blocks and determinative-like on others. At the same time, retaining the canonical \textit{CGEL} pronoun analysis as the prior default is methodologically appropriate; the data here do not overturn it, and the framework shown here makes explicit what kinds of evidence would do so.
-
-Seen more broadly, the study's contribution is methodological and interpretive rather than a category assignment. It operationalizes a way to examine boundary phenomena that avoids selective diagnostic shopping \parencite{croft2001radical}: prespecify a small set of sensible analyses; interpret agreement as internal robustness on one dataset; make prior theoretical commitments explicit; and report the full specification surface rather than only favourable summaries. Inconclusive tests cease to be mere failures when they co-occur with cross-dimensional conflict and a stable pattern of diagnostic uncertainty; they become data about category structure when categories are treated as projectible property clusters \parencite{miller2021}.
-
-\subsection{Limitations, scope conditions, and disconfirmation}
-
-All findings are conditional on a single, theory-informed, hand-coded binary measurement model. Features are binarized, single-coder, and \textit{CGEL}-dependent; this raises construct-validity and reliability concerns. I partly offset these with blockwise analyses and metric choice motivated by ordination, but stronger guarantees would require multi-annotator coding with reliability estimates or corpus-derived distributional features that reduce theory-dependence.
-
-Target scarcity constrains inferential resolution: English has two reciprocal types, so any single reference-distribution contrast between reciprocals and comparators is inherently fragile, and supervised categorization produces only two probabilities of primary interest. Multiplicity and researcher degrees of freedom are addressed by prespecifying a small, theory-led set of analyses and reporting them all. Specification choices nonetheless remain scope conditions on the results.
-
-External validity is restricted to English and to the inventory defined by \textit{CGEL}; cross-linguistic generalization is a matter for new data.
-
-The framework also supplies clear disconfirmation criteria for this case. Outcomes that would count against the boundary diagnosis include: alignment of morphology, syntax, semantics, and phonology on the same pole; calibrated supervised probabilities near 1.0 under one labelling together with superior predictive fit; disappearance of diagnostic uncertainty under reasonable distance metrics or regularization choices; and stability of those outcomes under feature-subset resampling. None of these criteria is met here.
-
-\subsection{Implications and outlook}
-
-This case illustrates how to study boundary phenomena responsibly when categories are represented as structured property profiles. The objective is not to force a verdict on reciprocals but to refine the workflow that registers boundary behaviour on the measurement model already in use.
-
-The first implication is that the workflow should characterize dependence rather than \enquote{repair} individual codings in a large, noisy matrix. What matters is which parts of the measurement model underwrite the boundary diagnosis. Influence diagnostics for distance-based summaries, blockwise ablations, and adversarial recoding of plausible high-leverage features can map an internal robustness surface: they show which modest, theory-motivated perturbations do and do not alter the qualitative outcome. Predictive comparison belongs in this workflow only after posterior predictive checks and with Pareto-$k$ diagnostics reported, since its role here is secondary to the main question of boundary location rather than model ranking.
-
-The second implication is calibration against control items. Clear pronouns and clear compound determinatives should behave as anchors under the same analyses, yielding high-confidence, aligned outcomes for anchors and diagnostic uncertainty for reciprocals. If the same uncertainty appears for anchors, the pipeline is uninformative; if it localizes to reciprocals, the boundary diagnosis gains credibility without appealing to data beyond the current inventory. The supplement accompanying the submission provides the full matrix, feature-block map, item annotations, anchor manifests, scripts, matched-set manifest, quasiswap draws, and derived robustness summaries so that readers can inspect which coding decisions do and do not move the interface position.
-
-A third implication concerns evidence beyond the type-level matrix. Token-level evidence, where available, should be used as a diagnostic of boundary dispersion rather than as a route to a type-level decision. The lexeme can be treated as a distribution over constructions and modification profiles, with predeclared dispersion summaries compared to the anchors. On a profile-based view, a boundary item is expected to show broader, more heterogeneous contextual support than clear-category anchors. Independent acceptability judgments offer a complementary test: if distance-to-boundary predicts judgment variance in contexts that differentiate pronouns from determinatives, that would support the interpretation that stable diagnostic uncertainty reflects proximity to a discrete threshold rather than inherent category fuzziness.
-
-These implications remain within English and within the existing theoretical commitments, but the logic transfers. Field linguists documenting boundary phenomena in understudied languages may not need elaborate statistical machinery at the first stage. The core practice is still portable: document the full range of conflicting properties, compare explicitly to clear anchors, and acknowledge boundary status in reference materials rather than forcing binary decisions. The broader payoff of the workflow is that it makes difficult category edges inspectable without pretending that every hard case can be made decisive.
-
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}@{}}
+\toprule
+Quantity & Fixed / varied & Interpretation \\
+\midrule
+Observed distances & Matrix, anchors, weights, and metric fixed & Descriptive computation \\
+Monte Carlo summaries & Benchmark fixed; placements vary & Simulation error \\
+Family resampling & Features and family definitions fixed; family multiplicities vary & Composition sensitivity \\
+Comparator alternatives & Coding fixed; membership or aggregation varies & Different descriptive comparisons \\
+Feature changes & Baseline retained; a specified coding or weighting choice varies & Sensitivity, not coding-error probability \\
+\bottomrule
+\end{tabular}
+\caption{Sources of variation and their scope. The first row has numerical precision but no sampling uncertainty under the fixed specification. None of the remaining rows estimates independent coding reliability.}
+\label{tab:uncertainty}
+\end{table}
 
 \section{Conclusion}
 
-Small-$n$ grammatical boundary phenomena need measurement procedures that distinguish unstable diagnostic noise from stable interface placement. This paper develops such a procedure and demonstrates it with English reciprocals. Starting from a 155-property \textit{CGEL}-informed profile of pronouns and determinatives, the analysis asks whether \mention{each other} and \mention{one another} keep returning to the same region of grammatical space under constrained randomization, specification-curve analysis, comparator-set rotation, predictive blending, and anchor calibration.
+A quantitative study of disputed categorization needs to show what distinguishes its targets from clear comparison items. Under the full 154-feature Jaccard instrument, all 57 controls are nearer their designated group. Each reciprocal is nearer each group than the other group's members are, but farther from it than its own members, dummy \mention{it} aside. Their modest compound preference depends on a few whole-word morphological codes. Without morphology, both favour personal pronouns, and balancing semantics and syntax strengthens that preference. In the tested block-total comparison, the positive contrast depends on two heavily weighted phonological columns.
 
-They do. Across the analyses applied above, reciprocals occupy the interface between pronouns and compound determinatives. They show mixed neighbours, stable distance contrasts, near-parity blend weights, and calibrated uncertainty in supervised models, while morphology pulls them toward compound determinatives and semantics pulls them toward pronouns. This stability is informative because the pattern is not expected from arbitrary coding noise or an uninformative pipeline: clear anchors remain recoverable, and the same diagnostics localize uncertainty to the difficult items.
-
-The result is deliberately narrower than a recategorization. The evidence is internal robustness on one hand-coded measurement model, not independent convergence across datasets. The uncertainty is epistemic; the measurements locate an interface zone without showing that the underlying categories are themselves vague. If categories are treated as projectible property clusters, that pattern is meaningful because partial profiles support projection to further properties. Clear pronouns and clear compound determinatives do that here; reciprocals are revealing because those projections conflict in stable, structured ways.
-
-The broader payoff is a quantitative-linguistics workflow for hard category edges: build comprehensive property profiles, define distance contrasts, compare key summaries to constrained reference distributions, vary plausible specifications, rotate comparator sets, calibrate against clear anchors, and report effect distributions rather than only tail areas. These steps do not make hard cases easy, and they do not substitute for new measurements or external evidence. They make hard cases harder to misdescribe.
+This account of diagnostic conflict specifies the representation under which the reciprocal profiles are distinctive, identifies its dependence on feature selection and weighting, and preserves the difference between internal sensitivity checks and external validation. These measurements give grammatical argument something concrete to explain without deciding the categorization in advance.
 
 \ifcjlsubmission
 \else
+\begingroup
+\singlespacing
 \section*{Acknowledgments}
 None.
 
@@ -423,17 +457,15 @@ No funding was obtained for the reported work.
 The author reports there are no competing interests to declare.
 
 \section*{Declaration of Generative AI Use}
-During revision and submission-package preparation, the author used OpenAI Codex (GPT-5, accessed in June 2026 through a local Codex CLI environment and the OpenAI API). It was used to suggest line edits, check consistency with the journal instructions and the author's house style, assist with LaTeX build and log troubleshooting, prepare submission-package checklists, and draft possible revision and administrative wording. The reason for use was editorial and procedural assistance: to improve clarity, consistency, formatting compliance, and packaging accuracy. The author reviewed, revised, and approved all AI-assisted output and takes full responsibility for the final text, analyses, and conclusions.
+OpenAI Codex using GPT-6 Astra assisted revision planning, comparator-manifest preparation, code implementation, manuscript editing, interpretation, and reproducible outputs. A separate Codex audit using GPT-5.6 Terra checked the numerical results, including the recorded block-weight comparison. Reviews from Elicit (22 September 2026; underlying model not recorded), ChatGPT Pro using GPT-6 Sol, and Claude Opus 5.5 informed subsequent revisions. Proposed numerical findings were checked against the supplied data. The original feature values were preserved. The author is responsible for the theoretical claims, arguments, errors, and interpretive choices.
 
 \section*{Data Availability Statement}
-The data matrix, feature-block mapping, anchor manifests, analysis scripts, generated figures, and derived robustness summaries are supplied as supplementary material.
-\fi
+Data and code are provided in the accompanying journal supplementary analysis package. It includes the unchanged source matrix, feature dictionary and block map, comparator manifest, protocols, scripts, complete specification results, reference draws, and sensitivity outputs, including the post hoc diagnostics. Manuscript tables are generated from the saved outputs.
 
+\endgroup
 \clearpage
 {\centering\textsc{References}}
-
 \begin{sloppypar}
 \printbibliography[heading=none]
 \end{sloppypar}
-
 \end{document}

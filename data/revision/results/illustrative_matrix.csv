@@ -1,0 +1,6 @@
+lemma,compound_word,paradigm_has_distinct_acc_form,person_deixis,reciprocal,appears_in_subject
+she,0,1,1,0,1
+herself,1,1,1,0,0
+everyone,1,0,0,0,1
+each_other,1,0,0,1,0
+one_another,1,0,0,1,0

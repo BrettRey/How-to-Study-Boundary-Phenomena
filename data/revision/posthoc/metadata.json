@@ -1,0 +1,51 @@
+{
+  "protocol_sha256": "ffa8a2f8652324b3edca2faeed770ef00233cd28ea6ed74cef540ed7555852d6",
+  "script_sha256": "e71414f9eaafd166a0500c134bd5d1ca2ee459c540347e18e02a9aa2ce8dc8e7",
+  "inputs": {
+    "data/matrix_clean.csv": "f9ebd548b2b695e5cfed2bfd853dc775cce6c5accb44f6f3ae63ba957c2fe059",
+    "data/feature_blocks_by_order.csv": "7846034b00bda1a10a42bc23c89f206d3d7a5454bc6c146edb7db0d747599a4b",
+    "data/revision/comparators.csv": "3ce9741ddf6d48628e42c2f5ad47d03747acb24a88e165df221b4ccc2e50fc84",
+    "data/revision/results/all_specifications.csv": "4f488670502697870c47732f2c207363ed4fc5e6765d663a7a54a5228314fb97",
+    "data/revision/followup/block_weight_item_results.csv": "f41b863b9a9d36ec0ed1aed573bc25ce9cbed7014752288b0307762ad541c686"
+  },
+  "numpy": "2.4.2",
+  "pandas": "3.0.1",
+  "item_result_rows": 1888,
+  "diagnostic_summary_rows": 32,
+  "original_observed_specifications": 80,
+  "new_random_draws": 0,
+  "baseline_crosschecks": [
+    {
+      "diagnostic": "all",
+      "weighting": "equal_feature",
+      "rows": 118,
+      "maximum_absolute_error": 5.898059818321144e-16
+    },
+    {
+      "diagnostic": "all",
+      "weighting": "equal_block_total",
+      "rows": 118,
+      "maximum_absolute_error": 8.326672684688674e-17
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_feature",
+      "rows": 118,
+      "maximum_absolute_error": 4.163336342344337e-16
+    },
+    {
+      "diagnostic": "no_morph",
+      "weighting": "equal_block_total",
+      "rows": 118,
+      "maximum_absolute_error": 8.326672684688674e-17
+    }
+  ],
+  "outputs": {
+    "control_benchmark.csv": "b092b0db671bef549e6ee4fcc257235d7458dd58762873ae8af1af5a6013632b",
+    "deterministic_item_results.csv": "4290675960e50ba574546770e84561c7ef47d1fe25328bfdb63c6190a33cb148",
+    "original_grid_endpoints.csv": "48082caa760882e0c132293f641fb95542ccd914429b4cef2a14f18085c1f08c",
+    "checks.json": "22bd6d4802d911e3527c6d87e47c9e2eb1336c60fb6f0a6e43fa85b96b7b6ef0",
+    "diagnostic_summary.csv": "4ef6b800e189f311bafce0f6241a19218e903eec855e74e688e3cbdb6540c380",
+    "feature_counts.csv": "07e4d3e958448988fe0f26482ccc2e2be2349667a672715076ab738310078653"
+  }
+}
